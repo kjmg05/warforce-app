@@ -1,21 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, Text, View } from "react-native";
-import getEnvVars from "../../../environment";
-// import fetchStarWars from "../../api";
+import fetchStarWars from "../../api";
 import Card from "../Card";
-
-
-//Para obtener los datos de la API
-const { apiUrl } = getEnvVars();
-
-const fetchStarWars = async () => {
-    const endpoint = `${apiUrl}planets/`;
-
-    const response = await fetch(endpoint);
-    const data = await response.json();
-
-    return data;
-};
 
 const Planets = () => {
     const [starWars, setStarwars] = useState({});
