@@ -4,12 +4,20 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 const Home = ({navigation}) => {
     return (
         //funcion anonima () => {}
-        <TouchableOpacity onPress={() => {navigation.navigate("Planets")}}> 
-            <View style={styles.container}>
-                <Text>Esta es la pantalla de inicio</Text>
-            </View>
+        <View>
+        <TouchableOpacity onPress={() => {navigation.navigate("Characters")}} style={styles.container}> 
+                <Text>Characters</Text>
         </TouchableOpacity>
-        
+        <TouchableOpacity onPress={() => {navigation.navigate("Movies")}} style={styles.container}> 
+                <Text>Movies</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {navigation.navigate("Planets")}} style={styles.container}> 
+                <Text>Planets</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {navigation.navigate("Starships")}} style={styles.container}> 
+                <Text>Starships</Text>
+        </TouchableOpacity>
+        </View>
     );  
 };
 

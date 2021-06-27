@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, Text, View } from "react-native";
 import getEnvVars from "../../../environment";
-// import fetchStarWars from "../../api";
 import Card from "../Card";
 
 
@@ -33,7 +32,7 @@ const Planets = () => {
     return (
         <View>
             <Text>WarForce App</Text>
-            {starWars.count && starWars.results.map((starWars) => {
+            {starWars.count && starWars.results.map((starWars) => { 
                 return(
                     <Card name = {starWars.name} population = {starWars.population} climate = {starWars.climate}/>
                 )
