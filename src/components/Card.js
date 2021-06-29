@@ -1,13 +1,18 @@
 import React from "react";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, View, ScrollView } from "react-native";
 
 const Card = ({name, climate, population}) => {
   return (
-    <View style={styles.container}>
+    
+      <ScrollView style={styles.container}><View>
         <Text style={styles.text}>{name}</Text>
         <Text style={styles.text}>{climate}</Text>
         <Text style={styles.text}>{population}</Text>
-    </View>
+        <Image style={styles.image}
+        source = {require('../../../assets/splash.png')}/></View>
+    </ScrollView>
+    
+    
   );
 };
 
@@ -25,8 +30,8 @@ const styles = StyleSheet.create({
     },
     
     image:{
-       width:300,
-        height: 300,
+       width:100,
+        height: 100,
     },
 });
 

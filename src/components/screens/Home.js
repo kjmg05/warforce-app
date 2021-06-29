@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 
 const Home = ({navigation}) => {
     return (
@@ -7,6 +7,8 @@ const Home = ({navigation}) => {
         <View>
         <TouchableOpacity onPress={() => {navigation.navigate("Characters")}} style={styles.container}> 
                 <Text>Characters</Text>
+                <Image style={styles.image}
+        source = {require('../../../assets/image/films/image.png')}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {navigation.navigate("Movies")}} style={styles.container}> 
                 <Text>Movies</Text>
@@ -28,6 +30,12 @@ const styles = StyleSheet.create({
         borderColor:"#000",
         borderWidth: 1,
       },
+      image:{
+        padding: 10,
+        margin: 10,
+        width:300,
+         height: 300,
+     },
 });
 
 export default Home;
