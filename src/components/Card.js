@@ -7,9 +7,7 @@ const Card = ({name, climate, population}) => {
       <ScrollView style={styles.container}><View>
         <Text style={styles.text}>{name}</Text>
         <Text style={styles.text}>{climate}</Text>
-        <Text style={styles.text}>{population}</Text>
-        <Image style={styles.image}
-        source = {require('../../../assets/splash.png')}/></View>
+        <Text style={styles.text}>{population}</Text></View>
     </ScrollView>
     
     
