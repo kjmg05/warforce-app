@@ -8,6 +8,7 @@ const Card = ({name, climate, population}) => {
         <Text style={styles.text}>{name}</Text>
         <Text style={styles.text}>{climate}</Text>
         <Text style={styles.text}>{population}</Text></View>
+        <Image style={styles.image} source = {{uri : 'https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/characters/1.jpg'}}/>
     </ScrollView>
     
     
@@ -28,8 +29,8 @@ const styles = StyleSheet.create({
     },
     
     image:{
-       width:100,
-        height: 100,
+       width:300,
+      height: 300,
     },
 });
 

@@ -7,13 +7,13 @@ const Home = ({navigation}) => {
         //funcion anonima () => {}
     <View style={styles.container}>
         <ImageBackground
-          source={require("../../img/estrellasFondojpg.jpg")}
+          source={require("../../../assets/image/estrellasFondojpg.jpg")}
           resizeMode="contain"
           style={styles.image2}
           imageStyle={styles.image2_imageStyle}
         >
           <Image
-            source={require("../../img/WARfORCE.png")}
+            source={require("../../../assets/image/WARfORCE.png")}
             resizeMode="contain"
             style={styles.image3}
           ></Image>
