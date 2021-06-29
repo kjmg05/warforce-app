@@ -1,9 +1,22 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, Text, View } from "react-native";
-import fetchStarWars from "../../api";
+import getEnvVars from "../../../environment";
 import Card from "../Card";
 
-const Planets = () => {
+
+//Para obtener los datos de la API
+const { apiUrl } = getEnvVars();
+
+const fetchStarWars = async () => {
+    const endpoint = `${apiUrl}/starships/`;
+
+    const response = await fetch(endpoint);
+    const data = await response.json();
+
+    return data;
+};
+
+const Starships = () => {
     const [starWars, setStarwars] = useState({});
 
     const getStarWars = async () => {
@@ -21,7 +34,7 @@ const Planets = () => {
             <Text>WarForce App</Text>
             {starWars.count && starWars.results.map((starWars) => {
                 return(
-                    <Card name = {starWars.name} population = {starWars.population} climate = {starWars.climate}/>
+                    <Card name = {starWars.name} population = {starWars.model} climate = {starWars.manufacturer}/>
                 )
                 ;})}
         </View>
@@ -30,4 +43,4 @@ const Planets = () => {
 
 const styles = StyleSheet.create({});
 
-export default Planets;
+export default Starships;
