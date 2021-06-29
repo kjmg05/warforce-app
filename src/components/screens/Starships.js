@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import getEnvVars from "../../../environment";
 import Card from "../Card";
 
@@ -30,14 +30,20 @@ const Starships = () => {
       }, []);
 
     return (
-        <View>
-            <Text>WarForce App</Text>
+        <ScrollView>
             {starWars.count && starWars.results.map((starWars, index) => {
                 return(
-                    <Card name = {starWars.name} population = {starWars.model} climate = {starWars.manufacturer} number = {`starships/${index+1}`}/>
+                    <Card
+                        key = {index}
+                        swData1 = {`Starships: ${starWars.name}`}  
+                        swData2= {`Model: ${starWars.model}`} 
+                        swData3 = {`Manufacturer: ${starWars.manufacturer}`} 
+                        swData4 = {`Class: ${starWars.starship_class}`}
+                        number = {`starships/${index+1}`}
+                    />
                 )
                 ;})}
-        </View>
+        </ScrollView>
     );  
 };
 

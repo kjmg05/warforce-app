@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/components/screens/Home';
@@ -12,14 +12,22 @@ const Stack = createStackNavigator ();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name = "Home" component={Home}/>
-        <Stack.Screen name = "Characters" component={Characters}/>
-        <Stack.Screen name = "Movies" component={Movies}/>
-        <Stack.Screen name = "Planets" component={Planets}/>
-        <Stack.Screen name = "Starships" component={Starships}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+        <SafeAreaView style={styles.container}>
+            <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name = "Home" component={Home}/>
+            <Stack.Screen name = "Characters" component={Characters}/>
+            <Stack.Screen name = "Movies" component={Movies}/>
+            <Stack.Screen name = "Planets" component={Planets}/>
+            <Stack.Screen name = "Starships" component={Starships}/>
+          </Stack.Navigator>
+        </NavigationContainer>
+        </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

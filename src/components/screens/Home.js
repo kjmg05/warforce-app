@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from "react";
-import { StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity } from "react-native";
+import React from "react";
+import { StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity, ScrollView } from "react-native";
+import Theme from "../../theme";
 
 const Home = ({navigation}) => {
     return (
         //funcion anonima () => {}
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
         <ImageBackground
           source={require("../../../assets/image/estrellasFondojpg.jpg")}
           resizeMode="contain"
@@ -31,7 +32,7 @@ const Home = ({navigation}) => {
         </TouchableOpacity>
         </View>
         </ImageBackground>
-    </View>
+    </ScrollView>
     );  
 };
 
@@ -39,9 +40,7 @@ const Home = ({navigation}) => {
 const styles = StyleSheet.create({
         container: {
           flex: 1,
-
           backgroundColor: "rgba(15,15, 15,1)",
-          
         },
 
         Text: {
