@@ -1,17 +1,17 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, View, ScrollView } from "react-native";
+import getEnvVars from "../../environment";
 
-const Card = ({name, climate, population}) => {
+const { imageUrl } = getEnvVars();
+
+const Card = ({name, climate, population, number}) => {
   return (
-    
-      <ScrollView style={styles.container}><View>
+      <View style={styles.container}>
         <Text style={styles.text}>{name}</Text>
         <Text style={styles.text}>{climate}</Text>
-        <Text style={styles.text}>{population}</Text></View>
-        <Image style={styles.image} source = {{uri : 'https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/characters/1.jpg'}}/>
-    </ScrollView>
-    
-    
+        <Text style={styles.text}>{population}</Text>
+        <Image style={styles.image} source = {{uri : `${imageUrl}${number}.jpg`}}/>
+    </View>
   );
 };
 

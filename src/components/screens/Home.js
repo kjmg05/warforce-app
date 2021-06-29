@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity } from "react-native";
-//import React, { Component } from "react";
 
 const Home = ({navigation}) => {
     return (

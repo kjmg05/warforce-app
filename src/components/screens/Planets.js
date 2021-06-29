@@ -32,9 +32,9 @@ const Planets = () => {
     return (
         <View>
             <Text>WarForce App</Text>
-            {starWars.count && starWars.results.map((starWars) => { 
+            {starWars.count && starWars.results.map((starWars, index) => {  
                 return(
-                    <Card name = {starWars.name} population = {starWars.population} climate = {starWars.climate}/>
+                    <Card name = {starWars.name} population = {starWars.population} climate = {starWars.climate} number = {`planets/${index+1}`}/>
                 )
                 ;})}
         </View>

@@ -32,9 +32,9 @@ const Starships = () => {
     return (
         <View>
             <Text>WarForce App</Text>
-            {starWars.count && starWars.results.map((starWars) => {
+            {starWars.count && starWars.results.map((starWars, index) => {
                 return(
-                    <Card name = {starWars.name} population = {starWars.model} climate = {starWars.manufacturer}/>
+                    <Card name = {starWars.name} population = {starWars.model} climate = {starWars.manufacturer} number = {`starships/${index+1}`}/>
                 )
                 ;})}
         </View>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View} from "react-native";
 import getEnvVars from "../../../environment";
 import Card from "../Card";
 
@@ -29,11 +29,12 @@ const Characters = () => {
       }, []);
 
     return (
+        
         <View>
             <Text>WarForce App</Text>
-            {starWars.count && starWars.results.map((starWars) => {
+            {starWars.count && starWars.results.map((starWars, index) => {
                 return(
-                    <Card name = {starWars.name} population = {starWars.homeworld} climate = {starWars.gender}/>
+                    <Card name = {starWars.name} population = {starWars.homeworld} climate = {starWars.gender} number = {`characters/${index+1}`}/>
                 )
                 ;})}
         </View>
