@@ -1,48 +1,24 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, ScrollView } from "react-native";
-import getEnvVars from "../../../environment";
-import Card from "../Card";
-
-
-//Para obtener los datos de la API
-const { apiUrl } = getEnvVars();
-
-const fetchStarWars = async () => {
-    const endpoint = `${apiUrl}planets/`;
-
-    const response = await fetch(endpoint);
-    const data = await response.json();
-
-    return data;
-};
+import { linkedInfo, fetchStarWars } from "../../api";
+import { PlanetsCardList } from "../CardList";
 
 const Planets = () => {
-    const [starWars, setStarwars] = useState({});
+    const [planets, setPlanets] = useState({});
 
-    const getStarWars = async () => {
-        const response = await fetchStarWars();
+    const getPlanets = async () => {
+        const response = await fetchStarWars('planets/');
         
-        setStarwars(response);
+        setPlanets(response);
     };
 
     useEffect(() => {
-        getStarWars();
+        getPlanets();
       }, []);
 
     return (
         <ScrollView>
-            {starWars.count && starWars.results.map((starWars, index) => {  
-                return(
-                    <Card 
-                        key = {index}
-                        swData1 = {`Planet: ${starWars.name}`}  
-                        swData2= {`Climate: ${starWars.climate}`} 
-                        swData3 = {`Gravity: ${starWars.gravity}`} 
-                        swData4 = {`Population: ${starWars.population}`}
-                        number = {`planets/${index+1}`}
-                    />
-                )
-                ;})}
+            <PlanetsCardList planets = {planets}/>
         </ScrollView>
     );  
 };

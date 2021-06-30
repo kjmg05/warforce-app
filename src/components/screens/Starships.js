@@ -1,48 +1,24 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, ScrollView } from "react-native";
-import getEnvVars from "../../../environment";
-import Card from "../Card";
-
-
-//Para obtener los datos de la API
-const { apiUrl } = getEnvVars();
-
-const fetchStarWars = async () => {
-    const endpoint = `${apiUrl}/starships/`;
-
-    const response = await fetch(endpoint);
-    const data = await response.json();
-
-    return data;
-};
+import { linkedInfo, fetchStarWars } from "../../api";
+import { StarshipsCardList } from "../CardList";
 
 const Starships = () => {
-    const [starWars, setStarwars] = useState({});
+    const [starships, setStarships] = useState({});
 
-    const getStarWars = async () => {
-        const response = await fetchStarWars();
+    const getStarships = async () => {
+        const response = await fetchStarWars('starships/');
         
-        setStarwars(response);
+        setStarships(response);
     };
 
     useEffect(() => {
-        getStarWars();
+        getStarships();
       }, []);
 
     return (
         <ScrollView>
-            {starWars.count && starWars.results.map((starWars, index) => {
-                return(
-                    <Card
-                        key = {index}
-                        swData1 = {`Starships: ${starWars.name}`}  
-                        swData2= {`Model: ${starWars.model}`} 
-                        swData3 = {`Manufacturer: ${starWars.manufacturer}`} 
-                        swData4 = {`Class: ${starWars.starship_class}`}
-                        number = {`starships/${index+1}`}
-                    />
-                )
-                ;})}
+            <StarshipsCardList starships = {starships}/>
         </ScrollView>
     );  
 };

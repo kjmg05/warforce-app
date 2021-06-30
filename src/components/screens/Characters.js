@@ -1,50 +1,40 @@
 import React, {useEffect, useState} from "react";
 import { StyleSheet, ScrollView } from "react-native";
-import getEnvVars from "../../../environment";
-import Card from "../Card";
-
-//Para obtener los datos de la API
-const { apiUrl } = getEnvVars();
-
-const fetchStarWars = async () => {
-    const endpoint = `${apiUrl}/people/`;
-
-    const response = await fetch(endpoint);
-    const data = await response.json();
-
-    return data;
-};
+import { fetchStarWars } from "../../api";
+import { CharactersCardList } from "../CardList";
+import { LinkedInfo } from "../../api";
 
 const Characters = () => {
-    const [starWars, setStarwars] = useState({});
+    //Characters
+    const [characters, setCharacters] = useState({});
 
-    const getStarWars = async () => {
-        const response = await fetchStarWars();
+    const getCharacters = async () => {
+        const response = await fetchStarWars('people/');
         
-        setStarwars(response);
+        setCharacters(response);
     };
 
     useEffect(() => {
-        getStarWars();
-      }, []);
+        getCharacters();
+    }, []);
+
+    //HomeWorld
+    const [info, setInfo] = useState({});
+
+    const getInfo = async () => {
+        const infoResponse = await LinkedInfo(`https://swapi.dev/api/planets/1/`);
+        
+        setInfo(infoResponse);
+    };
+
+    useEffect(() => {
+        getInfo();
+    }, []);
 
     return (
         <ScrollView>
-            {starWars.count && starWars.results.map((starWars, index) =>
-            {
-                return(
-                    <Card 
-                        key = {index}
-                        swData1 = {`Name: ${starWars.name}`}  
-                        swData2= {`Birth Year: ${starWars.birth_year}`} 
-                        swData3 = {`Gender: ${starWars.gender}`} 
-                        swData4 = {`HomeWorld: ${starWars.homeworld}`}
-                        number = {`characters/${index+1}`}
-                    />   
-                )
-                ;})}
+            <CharactersCardList characters = {characters} info = {info}/>
         </ScrollView>
-            
     );  
 };
 
