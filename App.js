@@ -7,6 +7,7 @@ import Planets from './src/components/screens/Planets';
 import Starships from './src/components/screens/Starships';
 import Characters from './src/components/screens/Characters';
 import Movies from './src/components/screens/Movies';
+import SwInfo from './src/components/screens/swInfo';
 
 const Stack = createStackNavigator ();
 
@@ -20,6 +21,7 @@ export default function App() {
             <Stack.Screen name = "Movies" component={Movies}/>
             <Stack.Screen name = "Planets" component={Planets}/>
             <Stack.Screen name = "Starships" component={Starships}/>
+            <Stack.Screen name = "SwInfo" component={SwInfo}/>
           </Stack.Navigator>
         </NavigationContainer>
         </SafeAreaView>

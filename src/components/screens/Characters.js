@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { StyleSheet, SafeAreaView, Text, TouchableOpacity, Modal} from "react-native";
 import { fetchStarWars } from "../../api";
 import { CharactersCardList } from "../CardList";
 import { LinkedInfo } from "../../api";
 
-const Characters = () => {
+const Characters = ({navigation}) => {
     //Characters
     const [characters, setCharacters] = useState({});
 
@@ -32,9 +32,9 @@ const Characters = () => {
     }, []);
 
     return (
-        <ScrollView>
-            <CharactersCardList characters = {characters} info = {info}/>
-        </ScrollView>
+        <SafeAreaView>
+            <CharactersCardList characters = {characters} info = {info} navigation={navigation}/>
+        </SafeAreaView>
     );  
 };
 
