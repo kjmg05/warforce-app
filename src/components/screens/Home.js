@@ -1,36 +1,27 @@
 import React from "react";
 import { StyleSheet, Text, Image, ImageBackground, View, TouchableOpacity, ScrollView } from "react-native";
-import Theme from "../../theme";
 
 const Home = ({navigation}) => {
     return (
         //funcion anonima () => {}
     <ScrollView style={styles.container}>
         <ImageBackground
-<<<<<<< HEAD
-          source={require("../../../assets/image/estrellasFondojpg.jpg")}
-=======
           source={require("../../../assets/image/4.jpg")}
->>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
           resizeMode="contain"
           style={styles.image2}
           imageStyle={styles.image2_imageStyle}
         >
-<<<<<<< HEAD
-          <Image
-=======
         </ImageBackground>
 
 
         <View style={styles.body}>
         <Image
->>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
             source={require("../../../assets/image/WARfORCE.png")}
             resizeMode="contain"
             style={styles.image3}
           ></Image>
         
-        <TouchableOpacity onPress={() => {navigation.navigate("Characters")}} style={styles.button1}> 
+        <TouchableOpacity onPress={() => {navigation.navigate("PagesCharacters")}} style={styles.button1}> 
                 <Text style={styles.Text}>Characters</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {navigation.navigate("Movies")}} style={styles.button1}> 
@@ -43,10 +34,6 @@ const Home = ({navigation}) => {
                 <Text style={styles.Text}>Starships</Text>
         </TouchableOpacity>
         </View>
-<<<<<<< HEAD
-        </ImageBackground>
-=======
->>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
     </ScrollView>
     );  
 };
@@ -56,15 +43,12 @@ const styles = StyleSheet.create({
         container: {
           flex: 1,
           backgroundColor: "rgba(15,15, 15,1)",
-<<<<<<< HEAD
-=======
         },
 
         body: {
           
           justifyContent:"center",
           alignItems:"center",
->>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
         },
 
      

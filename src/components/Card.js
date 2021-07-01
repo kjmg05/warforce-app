@@ -4,7 +4,7 @@ import StarWarsImage from "./StarWarsImage"
 
 export const CardCharacters = ({swData1, swData2, swData3, swData4, number}) => {
   return (
-      <View style={styles.container}>
+      <View style={styles.CardCharacters}>
         <Text style={styles.text}>{swData1}</Text>
         <Text style={styles.text}>{swData2}</Text>
         <Text style={styles.text}>{swData3}</Text>
@@ -16,7 +16,7 @@ export const CardCharacters = ({swData1, swData2, swData3, swData4, number}) => 
 
 export const CardMovies = ({swData1, swData2, swData3, swData4, number}) => {
   return (
-      <View style={styles.container}>
+      <View style={styles.CardMovies}>
         <Text style={styles.text}>{swData1}</Text>
         <Text style={styles.text}>{swData2}</Text>
         <Text style={styles.text}>{swData3}</Text>
@@ -28,7 +28,7 @@ export const CardMovies = ({swData1, swData2, swData3, swData4, number}) => {
 
 export const CardPlanets = ({swData1, swData2, swData3, swData4, number}) => {
   return (
-      <View style={styles.container}>
+      <View style={styles.CardPlanets}>
         <Text style={styles.text}>{swData1}</Text>
         <Text style={styles.text}>{swData2}</Text>
         <Text style={styles.text}>{swData3}</Text>
@@ -40,7 +40,7 @@ export const CardPlanets = ({swData1, swData2, swData3, swData4, number}) => {
 
 export const CardStarships = ({swData1, swData2, swData3, swData4, number}) => {
   return (
-      <View style={styles.container}>
+      <View style={styles.CardStarships}>
         <Text style={styles.text}>{swData1}</Text>
         <Text style={styles.text}>{swData2}</Text>
         <Text style={styles.text}>{swData3}</Text>
@@ -51,7 +51,7 @@ export const CardStarships = ({swData1, swData2, swData3, swData4, number}) => {
 };
 
 const styles = StyleSheet.create({
-    container:{
+      CardCharacters:{
         flex:1,
         padding: 10,
         margin: 10,
@@ -72,6 +72,68 @@ const styles = StyleSheet.create({
           shadowRadius: 5,
       },
     
+      CardMovies:{
+        flex:1,
+        padding: 10,
+        margin: 10,
+        borderColor:"#000",
+        borderWidth: 1,
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor: "rgba(15,15, 15,1)",
+        borderRadius: 25,
+          borderWidth: 5,
+          borderColor: "rgba(248,221,43,1)",
+          shadowColor: "rgba(218,224,12,1)",
+          shadowOffset: {
+              width: 3,
+              height: 3},        
+          elevation: 15,
+          shadowOpacity: 0.77,
+          shadowRadius: 5,
+      },
+    
+      CardPlanets:{
+        flex:1,
+        padding: 10,
+        margin: 10,
+        borderColor:"#000",
+        borderWidth: 1,
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor: "rgba(15,15, 15,1)",
+        borderRadius: 25,
+          borderWidth: 5,
+          borderColor: "rgba(248,221,43,1)",
+          shadowColor: "rgba(218,224,12,1)",
+          shadowOffset: {
+              width: 3,
+              height: 3},        
+          elevation: 15,
+          shadowOpacity: 0.77,
+          shadowRadius: 5,
+      },
+
+      CardStarships:{
+        flex:1,
+        padding: 10,
+        margin: 10,
+        borderColor:"#000",
+        borderWidth: 1,
+        justifyContent:"center",
+        alignItems:"center",
+        backgroundColor: "rgba(15,15, 15,1)",
+        borderRadius: 25,
+          borderWidth: 5,
+          borderColor: "rgba(248,221,43,1)",
+          shadowColor: "rgba(218,224,12,1)",
+          shadowOffset: {
+              width: 3,
+              height: 3},        
+          elevation: 15,
+          shadowOpacity: 0.77,
+          shadowRadius: 5,
+      },
     text: {
          fontSize:18,
          fontWeight:"bold",    
@@ -81,14 +143,10 @@ const styles = StyleSheet.create({
    
     
     image:{
-<<<<<<< HEAD
-       width:300,
-=======
      
       minHeight:"100%",
       minWidth:"100%",
       width:300,
->>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
       height: 300,
     },
 });

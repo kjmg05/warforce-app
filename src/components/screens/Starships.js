@@ -17,11 +17,7 @@ const Starships = ({navigation}) => {
       }, []);
 
     return (
-<<<<<<< HEAD
-        <ScrollView>
-=======
         <ScrollView  style={styles.container}>
->>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
             <StarshipsCardList starships = {starships} navigation={navigation}/>
         </ScrollView>
     );  

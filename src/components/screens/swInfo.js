@@ -23,6 +23,7 @@ export const SwInfoCharacter = ({ route }) => {
 
     return(
           <CardCharacters
+            key = {index}
             swData1 = {`Name: ${characters.name}`}  
             swData2 = {`Birth Year: ${characters.birth_year}`} 
             swData3 = {`Gender: ${characters.gender}`} 
@@ -49,6 +50,7 @@ export const SwInfoPlanet = ({ route }) => {
 
     return (
       <CardPlanets
+      key = {index}
       swData1 = {`Planet: ${planets.name}`} 
       swData2 = {`Climate: ${planets.climate}`} 
       swData3 = {`Gravity: ${planets.gravity}`} 
@@ -63,6 +65,7 @@ export const SwInfoMovie = ({ route }) => {
 
   return(
     <CardMovies
+    key = {index}
     swData1 = {`Episode ${movies.episode_id}: ${movies.title}`}  
     swData2= {`Date Created: ${movies.release_date}`} 
     swData3 = {`Director: ${movies.director}`} 
@@ -77,6 +80,7 @@ const {starships, index} = route.params;
 
 return(
   <CardStarships
+  key = {index}
   swData1 = {`Starships: ${starships.name}`}  
   swData2= {`Model: ${starships.model}`} 
   swData3 = {`Manufacturer: ${starships.manufacturer}`} 

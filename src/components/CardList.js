@@ -5,19 +5,19 @@ import { CardMovies } from "./Card";
 import { CardPlanets } from "./Card";
 import { CardStarships } from "./Card";
 
-export const CharactersCardList = ({ characters, navigation }) => {
+export const CharactersCardList = ({ characters, navigation, charNumber }) => {
     return (
         <ScrollView>
             {characters.count && characters.results.map((characters, index) =>{
                 return (
-                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoCharacter", {characters: characters, index: index})}}>
+                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoCharacter", {characters: characters, index: charNumber+index})}}>
                         <CardCharacters 
                             key = {index}
                             swData1 = {`Name: ${characters.name}`}  
                             // swData2 = {`Birth Year: ${characters.birth_year}`} 
                             // swData3 = {`Gender: ${characters.gender}`} 
                             // swData4 = {`HomeWorld: ${info.name}`}
-                            number = {`characters/${index}`}
+                            number = {`characters/${charNumber+index}`}
                         />
                     </TouchableOpacity>
                 )

@@ -1,15 +1,14 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, SafeAreaView, Text, TouchableOpacity, Modal} from "react-native";
+import { StyleSheet, SafeAreaView} from "react-native";
 import { fetchStarWars } from "../../api";
 import { CharactersCardList } from "../CardList";
-import { LinkedInfo } from "../../api";
 
-const Characters = ({navigation}) => {
-    //Characters
+const Characters = ({navigation, route}) => {
     const [characters, setCharacters] = useState({});
+    const {page, charNumber} = route.params;
 
     const getCharacters = async () => {
-        const response = await fetchStarWars('people/');
+        const response = await fetchStarWars(page);
         
         setCharacters(response);
     };
@@ -19,21 +18,13 @@ const Characters = ({navigation}) => {
     }, []);
 
     return (
-<<<<<<< HEAD
-        <SafeAreaView>
-            <CharactersCardList characters = {characters} navigation={navigation}/>
-        </SafeAreaView>
-=======
         <SafeAreaView style={styles.container}>
-          
-            <CharactersCardList characters = {characters} navigation={navigation}/>
-            <TouchableOpacity onPress={() => {}} style={styles.button1}> 
+            <CharactersCardList characters = {characters} navigation={navigation} charNumber = {charNumber}/>
+            {/* <TouchableOpacity onPress={() => {fetchStarWars(characters.next)}} style={styles.button1}> 
                 <Text style={styles.Text}>Next</Text>
-            </TouchableOpacity>
-           
+            </TouchableOpacity> */}
         </SafeAreaView>
         
->>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
     );  
 };
 
