@@ -1,46 +1,34 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, Text, View } from "react-native";
-import getEnvVars from "../../../environment";
-import Card from "../Card";
+import { StyleSheet, ScrollView } from "react-native";
+import { linkedInfo, fetchStarWars } from "../../api";
+import { PlanetsCardList } from "../CardList";
 
+const Planets = ({navigation}) => {
+    const [planets, setPlanets] = useState({});
 
-//Para obtener los datos de la API
-const { apiUrl } = getEnvVars();
-
-const fetchStarWars = async () => {
-    const endpoint = `${apiUrl}planets/`;
-
-    const response = await fetch(endpoint);
-    const data = await response.json();
-
-    return data;
-};
-
-const Planets = () => {
-    const [starWars, setStarwars] = useState({});
-
-    const getStarWars = async () => {
-        const response = await fetchStarWars();
+    const getPlanets = async () => {
+        const response = await fetchStarWars('planets/');
         
-        setStarwars(response);
+        setPlanets(response);
     };
 
     useEffect(() => {
-        getStarWars();
+        getPlanets();
       }, []);
 
     return (
-        <View>
-            <Text>WarForce App</Text>
-            {starWars.count && starWars.results.map((starWars) => { 
-                return(
-                    <Card name = {starWars.name} population = {starWars.population} climate = {starWars.climate}/>
-                )
-                ;})}
-        </View>
+        <ScrollView style={styles.container}>
+            <PlanetsCardList planets = {planets} navigation={navigation}/>
+        </ScrollView>
     );  
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "rgba(15,15, 15,1)",
+      },
+
+});
 
 export default Planets;

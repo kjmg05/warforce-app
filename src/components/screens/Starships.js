@@ -1,46 +1,33 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, Text, View } from "react-native";
-import getEnvVars from "../../../environment";
-import Card from "../Card";
+import { StyleSheet, ScrollView } from "react-native";
+import { linkedInfo, fetchStarWars } from "../../api";
+import { StarshipsCardList } from "../CardList";
 
+const Starships = ({navigation}) => {
+    const [starships, setStarships] = useState({});
 
-//Para obtener los datos de la API
-const { apiUrl } = getEnvVars();
-
-const fetchStarWars = async () => {
-    const endpoint = `${apiUrl}/starships/`;
-
-    const response = await fetch(endpoint);
-    const data = await response.json();
-
-    return data;
-};
-
-const Starships = () => {
-    const [starWars, setStarwars] = useState({});
-
-    const getStarWars = async () => {
-        const response = await fetchStarWars();
+    const getStarships = async () => {
+        const response = await fetchStarWars('starships/');
         
-        setStarwars(response);
+        setStarships(response);
     };
 
     useEffect(() => {
-        getStarWars();
+        getStarships();
       }, []);
 
     return (
-        <View>
-            <Text>WarForce App</Text>
-            {starWars.count && starWars.results.map((starWars) => {
-                return(
-                    <Card name = {starWars.name} population = {starWars.model} climate = {starWars.manufacturer}/>
-                )
-                ;})}
-        </View>
+        <ScrollView  style={styles.container}>
+            <StarshipsCardList starships = {starships} navigation={navigation}/>
+        </ScrollView>
     );  
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "rgba(15,15, 15,1)",
+      },
+});
 
 export default Starships;

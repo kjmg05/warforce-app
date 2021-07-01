@@ -1,46 +1,33 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, Text, View } from "react-native";
-import getEnvVars from "../../../environment";
-import Card from "../Card";
+import { StyleSheet, ScrollView } from "react-native";
+import { linkedInfo, fetchStarWars } from "../../api";
+import { MoviesCardList } from "../CardList";
 
+const Movies = ({navigation}) => {
+    const [movies, setMovies] = useState({});
 
-//Para obtener los datos de la API
-const { apiUrl } = getEnvVars();
-
-const fetchStarWars = async () => {
-    const endpoint = `${apiUrl}/films/`;
-
-    const response = await fetch(endpoint);
-    const data = await response.json();
-
-    return data;
-};
-
-const Movies = () => {
-    const [starWars, setStarwars] = useState({});
-
-    const getStarWars = async () => {
-        const response = await fetchStarWars();
+    const getMovies = async () => {
+        const response = await fetchStarWars('films/');
         
-        setStarwars(response);
+        setMovies(response);
     };
 
     useEffect(() => {
-        getStarWars();
+        getMovies();
       }, []);
 
     return (
-        <View>
-            <Text>WarForce App</Text>
-            {starWars.count && starWars.results.map((starWars) => {
-                return(
-                    <Card name = {starWars.title} population = {starWars.created} climate = {starWars.director}/>
-                )
-                ;})}
-        </View>
+        <ScrollView style={styles.container}>
+            <MoviesCardList movies = {movies} navigation={navigation}/>
+        </ScrollView>
     );  
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+     container: {
+    flex: 1,
+    backgroundColor: "rgba(15,15, 15,1)",
+  }
+  ,});
 
 export default Movies;
