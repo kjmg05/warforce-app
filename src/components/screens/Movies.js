@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView } from "react-native";
 import { linkedInfo, fetchStarWars } from "../../api";
 import { MoviesCardList } from "../CardList";
 
-const Movies = () => {
+const Movies = ({navigation}) => {
     const [movies, setMovies] = useState({});
 
     const getMovies = async () => {
@@ -18,7 +18,7 @@ const Movies = () => {
 
     return (
         <ScrollView>
-            <MoviesCardList movies = {movies}/>
+            <MoviesCardList movies = {movies} navigation={navigation}/>
         </ScrollView>
     );  
 };

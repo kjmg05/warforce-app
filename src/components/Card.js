@@ -1,17 +1,51 @@
 import React from "react";
-import { Image, StyleSheet, Text, View} from "react-native";
-import getEnvVars from "../../environment";
+import { StyleSheet, Text, View, Image} from "react-native";
+import StarWarsImage from "./StarWarsImage"
 
-const { imageUrl } = getEnvVars();
-
-const Card = ({swData1, swData2, swData3, swData4, number}) => {
+export const CardCharacters = ({swData1, swData2, swData3, swData4, number}) => {
   return (
       <View style={styles.container}>
         <Text style={styles.text}>{swData1}</Text>
         <Text style={styles.text}>{swData2}</Text>
         <Text style={styles.text}>{swData3}</Text>
         <Text style={styles.text}>{swData4}</Text>
-        <Image style={styles.image} source = {{uri : `${imageUrl}${number}.jpg`}}/>
+        <StarWarsImage number = {number}/>
+    </View>
+  );
+};
+
+export const CardMovies = ({swData1, swData2, swData3, swData4, number}) => {
+  return (
+      <View style={styles.container}>
+        <Text style={styles.text}>{swData1}</Text>
+        <Text style={styles.text}>{swData2}</Text>
+        <Text style={styles.text}>{swData3}</Text>
+        <Text style={styles.text}>{swData4}</Text>
+        <StarWarsImage number = {number}/>
+    </View>
+  );
+};
+
+export const CardPlanets = ({swData1, swData2, swData3, swData4, number}) => {
+  return (
+      <View style={styles.container}>
+        <Text style={styles.text}>{swData1}</Text>
+        <Text style={styles.text}>{swData2}</Text>
+        <Text style={styles.text}>{swData3}</Text>
+        <Text style={styles.text}>{swData4}</Text>
+        <StarWarsImage number = {number}/>
+    </View>
+  );
+};
+
+export const CardStarships = ({swData1, swData2, swData3, swData4, number}) => {
+  return (
+      <View style={styles.container}>
+        <Text style={styles.text}>{swData1}</Text>
+        <Text style={styles.text}>{swData2}</Text>
+        <Text style={styles.text}>{swData3}</Text>
+        <Text style={styles.text}>{swData4}</Text>
+        <StarWarsImage number = {number}/>
     </View>
   );
 };
@@ -34,5 +68,3 @@ const styles = StyleSheet.create({
       height: 300,
     },
 });
-
-export default Card;

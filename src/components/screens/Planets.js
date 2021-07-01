@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView } from "react-native";
 import { linkedInfo, fetchStarWars } from "../../api";
 import { PlanetsCardList } from "../CardList";
 
-const Planets = () => {
+const Planets = ({navigation}) => {
     const [planets, setPlanets] = useState({});
 
     const getPlanets = async () => {
@@ -18,7 +18,7 @@ const Planets = () => {
 
     return (
         <ScrollView>
-            <PlanetsCardList planets = {planets}/>
+            <PlanetsCardList planets = {planets} navigation={navigation}/>
         </ScrollView>
     );  
 };

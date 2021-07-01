@@ -18,22 +18,9 @@ const Characters = ({navigation}) => {
         getCharacters();
     }, []);
 
-    //HomeWorld
-    const [info, setInfo] = useState({});
-
-    const getInfo = async () => {
-        const infoResponse = await LinkedInfo(`https://swapi.dev/api/planets/1/`);
-        
-        setInfo(infoResponse);
-    };
-
-    useEffect(() => {
-        getInfo();
-    }, []);
-
     return (
         <SafeAreaView>
-            <CharactersCardList characters = {characters} info = {info} navigation={navigation}/>
+            <CharactersCardList characters = {characters} navigation={navigation}/>
         </SafeAreaView>
     );  
 };
