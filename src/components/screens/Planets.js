@@ -17,12 +17,22 @@ const Planets = ({navigation}) => {
       }, []);
 
     return (
+<<<<<<< HEAD
         <ScrollView>
+=======
+        <ScrollView style={styles.container}>
+>>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
             <PlanetsCardList planets = {planets} navigation={navigation}/>
         </ScrollView>
     );  
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "rgba(15,15, 15,1)",
+      },
+
+});
 
 export default Planets;

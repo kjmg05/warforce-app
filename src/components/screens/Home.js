@@ -7,31 +7,46 @@ const Home = ({navigation}) => {
         //funcion anonima () => {}
     <ScrollView style={styles.container}>
         <ImageBackground
+<<<<<<< HEAD
           source={require("../../../assets/image/estrellasFondojpg.jpg")}
+=======
+          source={require("../../../assets/image/4.jpg")}
+>>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
           resizeMode="contain"
           style={styles.image2}
           imageStyle={styles.image2_imageStyle}
         >
+<<<<<<< HEAD
           <Image
+=======
+        </ImageBackground>
+
+
+        <View style={styles.body}>
+        <Image
+>>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
             source={require("../../../assets/image/WARfORCE.png")}
             resizeMode="contain"
             style={styles.image3}
           ></Image>
-        <View>
+        
         <TouchableOpacity onPress={() => {navigation.navigate("Characters")}} style={styles.button1}> 
                 <Text style={styles.Text}>Characters</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {navigation.navigate("Movies")}} style={styles.button2}> 
+        <TouchableOpacity onPress={() => {navigation.navigate("Movies")}} style={styles.button1}> 
                 <Text style={styles.Text}>Movies</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {navigation.navigate("Planets")}} style={styles.button3}> 
+        <TouchableOpacity onPress={() => {navigation.navigate("Planets")}} style={styles.button1}> 
                 <Text style={styles.Text}>Planets</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {navigation.navigate("Starships")}} style={styles.button4}> 
+        <TouchableOpacity onPress={() => {navigation.navigate("Starships")}} style={styles.button1}> 
                 <Text style={styles.Text}>Starships</Text>
         </TouchableOpacity>
         </View>
+<<<<<<< HEAD
         </ImageBackground>
+=======
+>>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
     </ScrollView>
     );  
 };
@@ -41,101 +56,62 @@ const styles = StyleSheet.create({
         container: {
           flex: 1,
           backgroundColor: "rgba(15,15, 15,1)",
+<<<<<<< HEAD
+=======
         },
 
+        body: {
+          
+          justifyContent:"center",
+          alignItems:"center",
+>>>>>>> 828fa4923183ca509b577b8ee0cd87889dbee52f
+        },
+
+     
         Text: {
-        marginTop:30,   
-        textAlign:"center",    
-        color: "rgba(248,221,43,1)",
-        fontSize: 38
-         },
+          textAlign:"center",    
+          color: "rgba(248,221,43,1)",
+          fontSize: 38
+        },
 
         image2: {
-          width: 573,
-          height: 841,
-          backgroundColor: "rgba(0,0,0,1)",
-          marginTop: -13,
-          marginLeft: -85
+          flex:1,
+          minHeight:"100%",
+          minWidth:"100%", 
+          position:"absolute",
+          
+    
+        
         },
         image2_imageStyle: {},
+
         image3: {
-          width: 237,
-          height: 166,
-          marginTop: 40,
-          marginLeft: 154
+          width: 240,
+          height: 170,
+          resizeMode: "contain",
+      
         },
+
         button1: {
-          width: 300,
+          
+         width: 300,
           height: 126,
           backgroundColor: "rgba(164,164,164,0.5)",
-          borderRadius: 35,
+          borderRadius: 25,
           borderWidth: 5,
           borderColor: "rgba(248,221,43,1)",
           shadowColor: "rgba(218,224,12,1)",
           shadowOffset: {
-            width: 3,
-            height: 3
-          },
+              width: 3,
+              height: 3},        
           elevation: 15,
           shadowOpacity: 0.77,
           shadowRadius: 5,
-          marginTop: 10,
-          marginLeft: 123
+          marginTop: 20,
+          justifyContent:"center",
+          alignItems:"center",
+          
         },
-        button2: {
-          width: 300,
-          height: 126,
-          backgroundColor: "rgba(164,164,164,0.5)",
-          borderRadius: 35,
-          borderWidth: 5,
-          borderColor: "rgba(248,221,43,1)",
-          shadowColor: "rgba(218,224,12,1)",
-          shadowOffset: {
-            width: 3,
-            height: 3
-          },
-          elevation: 15,
-          shadowOpacity: 0.77,
-          shadowRadius: 5,
-          marginTop: 16,
-          marginLeft: 123
-        },
-        button3: {
-          width: 300,
-          height: 126,
-          backgroundColor: "rgba(164,164,164,0.5)",
-          borderRadius: 35,
-          borderWidth: 5,
-          borderColor: "rgba(248,221,43,1)",
-          shadowColor: "rgba(218,224,12,1)",
-          shadowOffset: {
-            width: 3,
-            height: 3
-          },
-          elevation: 15,
-          shadowOpacity: 0.77,
-          shadowRadius: 5,
-          marginTop: 18,
-          marginLeft: 123
-        },
-        button4: {
-          width: 300,
-          height: 126,
-          backgroundColor: "rgba(164,164,164,0.5)",
-          borderRadius: 35,
-          borderWidth: 5,
-          borderColor: "rgba(248,221,43,1)",
-          shadowColor: "rgba(218,224,12,1)",
-          shadowOffset: {
-            width: 3,
-            height: 3
-          },
-          elevation: 15,
-          shadowOpacity: 0.77,
-          shadowRadius: 5,
-          marginTop: 21,
-          marginLeft: 123
-        }
       });
       
       
