@@ -3,11 +3,12 @@ import { StyleSheet, ScrollView } from "react-native";
 import { linkedInfo, fetchStarWars } from "../../api";
 import { PlanetsCardList } from "../CardList";
 
-const Planets = ({navigation}) => {
+const Planets = ({navigation, route}) => {
     const [planets, setPlanets] = useState({});
+    const {page, planetNumber} = route.params;
 
     const getPlanets = async () => {
-        const response = await fetchStarWars('planets/');
+        const response = await fetchStarWars(page);
         
         setPlanets(response);
     };
@@ -18,7 +19,7 @@ const Planets = ({navigation}) => {
 
     return (
         <ScrollView style={styles.container}>
-            <PlanetsCardList planets = {planets} navigation={navigation}/>
+            <PlanetsCardList planets = {planets} navigation={navigation} planetNumber={planetNumber}/>
         </ScrollView>
     );  
 };
@@ -26,7 +27,7 @@ const Planets = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "rgba(15,15, 15,1)",
+        backgroundColor: "#0F0F0F",
       },
 
 });

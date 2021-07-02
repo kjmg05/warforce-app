@@ -2,19 +2,24 @@ import React from "react";
 import { StyleSheet, Text, View, Image} from "react-native";
 import StarWarsImage from "./StarWarsImage"
 
-export const CardCharacters = ({swData1, swData2, swData3, swData4, number}) => {
+export const CardCharacters = ({swData1, swData2, swData3, swData4, swData5, swData6, swData7, swData8, swData9, number}) => {
   return (
       <View style={styles.CardCharacters}>
         <Text style={styles.text}>{swData1}</Text>
         <Text style={styles.text}>{swData2}</Text>
         <Text style={styles.text}>{swData3}</Text>
         <Text style={styles.text}>{swData4}</Text>
+        <Text style={styles.text}>{swData5}</Text>
+        <Text style={styles.text}>{swData6}</Text>
+        <Text style={styles.text}>{swData7}</Text>
+        <Text style={styles.text}>{swData8}</Text>
+        <Text style={styles.text}>{swData9}</Text>
         <StarWarsImage number = {number}/>
     </View>
   );
 };
 
-export const CardMovies = ({swData1, swData2, swData3, swData4, number}) => {
+export const CardMovies = ({swData1, swData2, swData3, swData4, swData5, number}) => {
   return (
       <View style={styles.CardMovies}>
         <Text style={styles.text}>{swData1}</Text>
@@ -22,17 +27,23 @@ export const CardMovies = ({swData1, swData2, swData3, swData4, number}) => {
         <Text style={styles.text}>{swData3}</Text>
         <Text style={styles.text}>{swData4}</Text>
         <StarWarsImage number = {number}/>
+        <Text style={styles.text}>{swData5}</Text>
     </View>
   );
 };
 
-export const CardPlanets = ({swData1, swData2, swData3, swData4, number}) => {
+export const CardPlanets = ({swData1, swData2, swData3, swData4, swData5, swData6, swData7, swData8, swData9, number}) => {
   return (
       <View style={styles.CardPlanets}>
         <Text style={styles.text}>{swData1}</Text>
         <Text style={styles.text}>{swData2}</Text>
         <Text style={styles.text}>{swData3}</Text>
         <Text style={styles.text}>{swData4}</Text>
+        <Text style={styles.text}>{swData5}</Text>
+        <Text style={styles.text}>{swData6}</Text>
+        <Text style={styles.text}>{swData7}</Text>
+        <Text style={styles.text}>{swData8}</Text>
+        <Text style={styles.text}>{swData9}</Text>
         <StarWarsImage number = {number}/>
     </View>
   );

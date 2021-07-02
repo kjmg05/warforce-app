@@ -11,28 +11,30 @@ import { SwInfoCharacter } from './src/components/screens/swInfo';
 import { SwInfoPlanet } from './src/components/screens/swInfo';
 import { SwInfoMovie } from './src/components/screens/swInfo';
 import { SwInfoStarship } from './src/components/screens/swInfo';
-import { PagesCharacters } from './src/components/screens/Pages';
+import { PagesCharacters, PagesPlanets, PagesStarships } from './src/components/screens/Pages';
 
 const Stack = createStackNavigator ();
 
 export default function App() {
   return (
-        <SafeAreaView style={styles.container}>
-            <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name = "Home" component={Home}/>
-            <Stack.Screen name = "Characters" component={Characters}/>
-            <Stack.Screen name = "Movies" component={Movies}/>
-            <Stack.Screen name = "Planets" component={Planets}/>
-            <Stack.Screen name = "Starships" component={Starships}/>
-            <Stack.Screen name = "SwInfoCharacter" component={SwInfoCharacter}/>
-            <Stack.Screen name = "SwInfoPlanet" component={SwInfoPlanet}/>
-            <Stack.Screen name = "SwInfoMovie" component={SwInfoMovie}/>
-            <Stack.Screen name = "SwInfoStarship" component={SwInfoStarship}/>
-            <Stack.Screen name = "PagesCharacters" component={PagesCharacters} />
-          </Stack.Navigator>
-        </NavigationContainer>
-        </SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name = "Home" component={Home} options={{headerShown: false}}/>
+          <Stack.Screen name = "Characters" component={Characters}/>
+          <Stack.Screen name = "Movies" component={Movies}/>
+          <Stack.Screen name = "Planets" component={Planets}/>
+          <Stack.Screen name = "Starships" component={Starships}/>
+          <Stack.Screen name = "SwInfoCharacter" component={SwInfoCharacter} options={{title: "Character Information"}} />
+          <Stack.Screen name = "SwInfoPlanet" component={SwInfoPlanet} options={{title: "Planet Information"}}/>
+          <Stack.Screen name = "SwInfoMovie" component={SwInfoMovie} options={{title: "Movie Information"}} />
+          <Stack.Screen name = "SwInfoStarship" component={SwInfoStarship} options={{title: "Starship Information"}}/>
+          <Stack.Screen name = "PagesCharacters" component={PagesCharacters} options={{title: "Characters"}}/>
+          <Stack.Screen name = "PagesPlanets" component={PagesPlanets} options={{title: "Planets"}}/>
+          <Stack.Screen name = "PagesStarships" component={PagesStarships} options={{title: "Starships"}}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 

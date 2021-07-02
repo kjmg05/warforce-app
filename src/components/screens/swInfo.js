@@ -7,57 +7,34 @@ import { CardMovies } from "../Card";
 import { CardStarships } from "../Card";
 
 export const SwInfoCharacter = ({ route }) => {
-    const {characters, index}  = route.params;
-    //HomeWorld
-    const [info, setInfo] = useState({});
+  const {characters, index}  = route.params;
 
-    const getInfo = async () => {
-      const infoResponse = await LinkedInfo(characters.homeworld);
-      
-      setInfo(infoResponse);
-    };
+  const [info, setInfo] = useState({});
 
-    useEffect(() => {
-      getInfo();
-    }, []);
+  const getInfo = async () => {
+    const infoResponse = await LinkedInfo(characters.homeworld);
+    
+    setInfo(infoResponse);
+  };
 
-    return(
-          <CardCharacters
-            key = {index}
-            swData1 = {`Name: ${characters.name}`}  
-            swData2 = {`Birth Year: ${characters.birth_year}`} 
-            swData3 = {`Gender: ${characters.gender}`} 
-            swData4 = {`HomeWorld: ${info.name}`}
-            number = {`characters/${index}`}
-          />
-    );
-};
+  useEffect(() => {
+    getInfo();
+  }, []);
 
-export const SwInfoPlanet = ({ route }) => {
-    const {planets, index}  = route.params;
-    // //HomeWorld
-    // const [info, setInfo] = useState({});
-
-    // const getInfo = async () => {
-    //   const infoResponse = await LinkedInfo(planets.residents);
-      
-    //   setInfo(infoResponse);
-    // };
-
-    // useEffect(() => {
-    //   getInfo();
-    // }, []);
-
-    return (
-      <CardPlanets
-      key = {index}
-      swData1 = {`Planet: ${planets.name}`} 
-      swData2 = {`Climate: ${planets.climate}`} 
-      swData3 = {`Gravity: ${planets.gravity}`} 
-      swData4 = {`Population: ${planets.population}`}
-      number = {`planets/${index+1}`}
-      />
-    );
+  return(
+    <CardCharacters
+      swData1 = {`Name: ${characters.name}`}  
+      swData2 = {`Height: ${characters.height}`} 
+      swData3 = {`Mass: ${characters.mass}`} 
+      swData4 = {`Hair Color: ${characters.hair_color}`}
+      swData5 = {`Skin Color: ${characters.skin_color}` }
+      swData6 = {`Eye Color: ${characters.eye_color}`}  
+      swData7 = {`Birth Year: ${characters.birth_year}`} 
+      swData8 = {`Gender: ${characters.gender}`} 
+      swData9 = {`HomeWorld: ${info.name}`}
+      number = {`characters/${index}`}
+    />
+  );
 };
 
 export const SwInfoMovie = ({ route }) => {
@@ -65,33 +42,50 @@ export const SwInfoMovie = ({ route }) => {
 
   return(
     <CardMovies
-    key = {index}
-    swData1 = {`Episode ${movies.episode_id}: ${movies.title}`}  
-    swData2= {`Date Created: ${movies.release_date}`} 
-    swData3 = {`Director: ${movies.director}`} 
-    swData4 = {`Producer(s): ${movies.producer}`}
-    number = {`films/${index+1}`}
+      swData1 = {`Episode ${movies.episode_id}: ${movies.title}`}  
+      swData2= {`Director: ${movies.director}`} 
+      swData3 = {`Producer(s): ${movies.producer}`} 
+      swData4 = {`Date Created: ${movies.release_date}`}
+      swData5 = {`Opening Crawl: ${movies.opening_crawl}`}
+      number = {`films/${index+1}`}
+    />
+  );
+};
+
+export const SwInfoPlanet = ({ route }) => {
+  const {planets, index}  = route.params;
+
+  return (
+    <CardPlanets
+      swData1 = {`Planet: ${planets.name}`} 
+      swData2 = {`Rotation Period: ${planets.rotation_period}`} 
+      swData3 = {`Orbital Period: ${planets.orbital_period}`} 
+      swData4 = {`Diameter: ${planets.diameter}`}
+      swData5 = {`Climate: ${planets.climate}`}
+      swData6 = {`Gravity: ${planets.gravity}`}  
+      swData7 = {`Terrain: ${planets.terrain}`} 
+      swData8 = {`Surface Water: ${planets.surface_water}`} 
+      swData9 = {`Population: ${planets.population}`}
+      number = {`planets/${index+1}`}
     />
   );
 };
 
 export const SwInfoStarship = ({ route }) => {
 const {starships, index} = route.params;
-
-return(
-  <CardStarships
-  key = {index}
-  swData1 = {`Starships: ${starships.name}`}  
-  swData2= {`Model: ${starships.model}`} 
-  swData3 = {`Manufacturer: ${starships.manufacturer}`} 
-  swData4 = {`Class: ${starships.starship_class}`}
-  number = {`starships/${index+1}`}
-  />
-);
+  return(
+    <CardStarships
+      swData1 = {`Starships: ${starships.name}`}  
+      swData2= {`Model: ${starships.model}`} 
+      swData3 = {`Manufacturer: ${starships.manufacturer}`} 
+      swData4 = {`Class: ${starships.starship_class}`}
+      number = {`starships/${index+1}`}
+    />
+  );
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-    },
-  });
+  container: {
+    flex: 1,
+  },
+});

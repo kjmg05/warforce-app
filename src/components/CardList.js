@@ -13,17 +13,13 @@ export const CharactersCardList = ({ characters, navigation, charNumber }) => {
                     <TouchableOpacity onPress={() => {navigation.navigate("SwInfoCharacter", {characters: characters, index: charNumber+index})}}>
                         <CardCharacters 
                             key = {index}
-                            swData1 = {`Name: ${characters.name}`}  
-                            // swData2 = {`Birth Year: ${characters.birth_year}`} 
-                            // swData3 = {`Gender: ${characters.gender}`} 
-                            // swData4 = {`HomeWorld: ${info.name}`}
+                            swData1 = {`${characters.name}`}
                             number = {`characters/${charNumber+index}`}
                         />
                     </TouchableOpacity>
                 )
                 ;})}
         </ScrollView>
-        
     );
 };
 
@@ -35,11 +31,7 @@ export const MoviesCardList = ({ movies, navigation }) => {
                     <TouchableOpacity onPress={() => {navigation.navigate("SwInfoMovie", {movies: movies, index: index})}}>
                         <CardMovies
                             key = {index}
-                            swData1 = {`Episode ${movies.episode_id}: ${movies.title}`}  
-                            // swData2= {starWars.opening_crawl}
-                            // swData2= {`Date Created: ${movies.release_date}`} 
-                            // swData3 = {`Director: ${movies.director}`} 
-                            // swData4 = {`Producer(s): ${movies.producer}`}
+                            swData1 = {`Episode ${movies.episode_id}: ${movies.title}`}
                             number = {`films/${index+1}`}
                         />
                     </TouchableOpacity>
@@ -49,19 +41,16 @@ export const MoviesCardList = ({ movies, navigation }) => {
     );
 };
 
-export const PlanetsCardList = ({ planets, navigation }) => {
+export const PlanetsCardList = ({ planets, navigation, planetNumber }) => {
     return(
         <ScrollView>
             {planets.count && planets.results.map((planets, index) => {  
                 return(
-                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoPlanet", {planets: planets, index: index})}}>
+                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoPlanet", {planets: planets, index: planetNumber+index})}}>
                     <CardPlanets
                         key = {index}
-                        swData1 = {`Planet: ${planets.name}`} 
-                        // swData2 = {`Climate: ${planets.climate}`} 
-                        // swData3 = {`Gravity: ${planets.gravity}`} 
-                        // swData4 = {`Population: ${planets.population}`}
-                        number = {`planets/${index+1}`}
+                        swData1 = {`${planets.name}`}
+                        number = {`planets/${planetNumber+index}`}
                     />
                     </TouchableOpacity>
                 )
@@ -70,22 +59,18 @@ export const PlanetsCardList = ({ planets, navigation }) => {
     );
 };
 
-export const StarshipsCardList = ({ starships, navigation }) => {
+export const StarshipsCardList = ({ starships, navigation, starshipNumber }) => {
     return(
         <ScrollView>
             {starships.count && starships.results.map((starships, index) => {
                 return(
-                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoStarship", {starships: starships, index: index})}}>
+                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoStarship", {starships: starships, index: starshipNumber+index})}}>
                         <CardStarships
                         key = {index}
-                        swData1 = {`Starships: ${starships.name}`}  
-                        // swData2= {`Model: ${starships.model}`} 
-                        // swData3 = {`Manufacturer: ${starships.manufacturer}`} 
-                        // swData4 = {`Class: ${starships.starship_class}`}
-                        number = {`starships/${index+1}`}
+                        swData1 = {`${starships.name}`}  
+                        number = {`starships/${starshipNumber+index}`}
                     />
                     </TouchableOpacity>
-                    
                 )
                 ;})}
         </ScrollView>
