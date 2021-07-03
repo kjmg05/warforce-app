@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { StatusBar } from 'expo-status-bar';
 import Home from './src/components/screens/Home';
 import Planets from './src/components/screens/Planets';
 import Starships from './src/components/screens/Starships';
@@ -18,6 +19,7 @@ const Stack = createStackNavigator ();
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar></StatusBar>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name = "Home" component={Home} options={{headerShown: false}}/>

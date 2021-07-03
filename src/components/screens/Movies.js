@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { ActivityIndicator } from "react-native-paper";
 import { fetchStarWars } from "../../api";
 import { MoviesCardList } from "../CardList";
 
@@ -17,9 +18,11 @@ const Movies = ({navigation}) => {
       }, []);
 
     return (
-        <ScrollView style={styles.container}>
-            <MoviesCardList movies = {movies} navigation={navigation}/>
-        </ScrollView>
+        <SafeAreaView style={styles.container}>
+            {movies.count ?
+            (<MoviesCardList movies = {movies} navigation={navigation}/>)
+            : (<ActivityIndicator animating={true}/>)}
+        </SafeAreaView>
     );  
 };
 

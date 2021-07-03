@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, ScrollView } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { ActivityIndicator } from "react-native-paper";
 import { fetchStarWars } from "../../api";
 import { StarshipsCardList } from "../CardList";
 
@@ -18,9 +19,11 @@ const Starships = ({navigation, route}) => {
       }, []);
 
     return (
-        <ScrollView  style={styles.container}>
-            <StarshipsCardList starships = {starships} navigation={navigation} starshipNumber={starshipNumber} />
-        </ScrollView>
+        <SafeAreaView  style={styles.container}>
+            {starships.count ? 
+            (<StarshipsCardList starships = {starships} navigation={navigation} starshipNumber={starshipNumber} />)
+            : (<ActivityIndicator animating={true}/>)}
+        </SafeAreaView>
     );  
 };
 

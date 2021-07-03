@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, SafeAreaView} from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { ActivityIndicator } from "react-native-paper";
 import { fetchStarWars } from "../../api";
 import { CharactersCardList } from "../CardList";
 
@@ -19,9 +20,10 @@ const Characters = ({navigation, route}) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <CharactersCardList characters = {characters} navigation={navigation} charNumber = {charNumber}/>
-        </SafeAreaView>
-        
+            {characters.count ? 
+                (<CharactersCardList characters = {characters} navigation={navigation} charNumber = {charNumber}/>) 
+                : (<ActivityIndicator animating={true}/>)}
+        </SafeAreaView>   
     );  
 };
 

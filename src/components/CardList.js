@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { StyleSheet, ScrollView, TouchableOpacity, FlatList} from "react-native";
 import { CardCharacters } from "./Card";
 import { CardMovies } from "./Card";
 import { CardPlanets } from "./Card";
@@ -10,15 +10,14 @@ export const CharactersCardList = ({ characters, navigation, charNumber }) => {
         <ScrollView>
             {characters.count && characters.results.map((characters, index) =>{
                 return (
-                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoCharacter", {characters: characters, index: charNumber+index})}}>
+                    <TouchableOpacity key = {index} onPress={() => {navigation.navigate("SwInfoCharacter", {characters: characters, index: charNumber+index})}}>
                         <CardCharacters 
-                            key = {index}
                             swData1 = {`${characters.name}`}
                             number = {`characters/${charNumber+index}`}
                         />
                     </TouchableOpacity>
                 )
-                ;})}
+            ;})}
         </ScrollView>
     );
 };
@@ -28,15 +27,14 @@ export const MoviesCardList = ({ movies, navigation }) => {
         <ScrollView>
             {movies.count && movies.results.map((movies, index) => {
                 return(
-                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoMovie", {movies: movies, index: index})}}>
+                    <TouchableOpacity key = {index} onPress={() => {navigation.navigate("SwInfoMovie", {movies: movies, index: index})}}>
                         <CardMovies
-                            key = {index}
                             swData1 = {`Episode ${movies.episode_id}: ${movies.title}`}
                             number = {`films/${index+1}`}
                         />
                     </TouchableOpacity>
                 )
-                ;})}
+            ;})}
         </ScrollView>
     );
 };
@@ -46,15 +44,14 @@ export const PlanetsCardList = ({ planets, navigation, planetNumber }) => {
         <ScrollView>
             {planets.count && planets.results.map((planets, index) => {  
                 return(
-                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoPlanet", {planets: planets, index: planetNumber+index})}}>
+                    <TouchableOpacity key = {index} onPress={() => {navigation.navigate("SwInfoPlanet", {planets: planets, index: planetNumber+index})}}>
                     <CardPlanets
-                        key = {index}
                         swData1 = {`${planets.name}`}
-                        number = {`planets/${planetNumber+index}`}
+                        number = {`planets/${planetNumber+index+1}`}
                     />
                     </TouchableOpacity>
                 )
-                ;})}
+            ;})}
         </ScrollView>
     );
 };
@@ -64,15 +61,14 @@ export const StarshipsCardList = ({ starships, navigation, starshipNumber }) => 
         <ScrollView>
             {starships.count && starships.results.map((starships, index) => {
                 return(
-                    <TouchableOpacity onPress={() => {navigation.navigate("SwInfoStarship", {starships: starships, index: starshipNumber+index})}}>
+                    <TouchableOpacity key = {index} onPress={() => {navigation.navigate("SwInfoStarship", {starships: starships, index: starshipNumber+index})}}>
                         <CardStarships
-                        key = {index}
                         swData1 = {`${starships.name}`}  
-                        number = {`starships/${starshipNumber+index}`}
+                        number = {`starships/${starshipNumber+index+1}`}
                     />
                     </TouchableOpacity>
                 )
-                ;})}
+            ;})}
         </ScrollView>
     );
 };

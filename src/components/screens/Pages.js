@@ -12,7 +12,7 @@ export const PagesCharacters = ({ navigation }) => {
             <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: page, charNumber: 0})}}>
                 <Text style={styles.Text}>Characters Page One </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=2`, charNumber: charNumber+10})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=2`, charNumber: 10})}}>
                 <Text style={styles.Text}>Characters Page Two</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=3`, charNumber: charNumber+20})}}>
@@ -49,22 +49,22 @@ export const PagesPlanets = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <Text>Select a page to show Planets</Text>
-            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: page, charNumber: 0})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: page, planetNumber: 0})}}>
                 <Text style={styles.Text}>Planets Page One </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=2`, charNumber: planetNumber+10})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=2`, planetNumber: planetNumber+10})}}>
                 <Text style={styles.Text}>Planets Page Two</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=3`, charNumber: planetNumber+20})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=3`, planetNumber: planetNumber+20})}}>
                 <Text style={styles.Text}>Planets Page Three</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=4`, charNumber: planetNumber+30})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=4`, planetNumber: planetNumber+30})}}>
                 <Text style={styles.Text}>Planets Page Four</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=5`, charNumber: planetNumber+40})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=5`, planetNumber: planetNumber+40})}}>
                 <Text style={styles.Text}>Planets Page Five</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=6`, charNumber: planetNumber+50})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=6`, planetNumber: planetNumber+50})}}>
                 <Text style={styles.Text}>Planets Page Six</Text>
             </TouchableOpacity>
         </View>
@@ -80,16 +80,16 @@ export const PagesStarships = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <Text>Select a page to show Starships</Text>
-            <TouchableOpacity onPress={() => {navigation.navigate("Starships", {page: page, charNumber: 0})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Starships", {page: page, starshipNumber: 0})}}>
                 <Text style={styles.Text}>Starships Page One </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Starships", {page: `${page}?page=2`, charNumber: starshipNumber+10})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Starships", {page: `${page}?page=2`, starshipNumber: starshipNumber+10})}}>
                 <Text style={styles.Text}>Starships Page Two</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Starships", {page: `${page}?page=3`, charNumber: starshipNumber+20})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Starships", {page: `${page}?page=3`, starshipNumber: starshipNumber+20})}}>
                 <Text style={styles.Text}>Starships Page Three</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Starships", {page: `${page}?page=4`, charNumber: starshipNumber+30})}}>
+            <TouchableOpacity onPress={() => {navigation.navigate("Starships", {page: `${page}?page=4`, starshipNumber: starshipNumber+30})}}>
                 <Text style={styles.Text}>Starships Page Four</Text>
             </TouchableOpacity>
         </View>
