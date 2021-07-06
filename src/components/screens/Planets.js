@@ -8,11 +8,7 @@ import {
 import { ActivityIndicator } from "react-native-paper";
 import { fetchStarWars } from "../../api";
 import { PlanetsCardList } from "../shared/CardList";
-<<<<<<< HEAD
-
-=======
 import theme from "../../theme";
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
 const { width, height } = Dimensions.get("screen");
 
 const Planets = ({ navigation, route }) => {
@@ -62,10 +58,7 @@ const styles = StyleSheet.create({
     height: height,
     position: "absolute",
     marginTop: -15,
-<<<<<<< HEAD
-=======
-    backgroundColor:theme.colors.orange,
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
+    backgroundColor: theme.colors.orange,
   },
 });
 

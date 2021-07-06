@@ -29,13 +29,13 @@ const Home = ({ navigation }) => {
         />
 
         <View style={styles.body}>
-        <MaterialIcons
-          style={styles.infoIcon}
-          name="info"
-          size={24}
-          onPress={() => setModalOpen(true)}
-          color="#fff"
-        />
+          <MaterialIcons
+            style={styles.infoIcon}
+            name="info"
+            size={24}
+            onPress={() => setModalOpen(true)}
+            color="#fff"
+          />
           <Image
             source={require("../../../assets/image/wf_logo.png")}
             resizeMode="contain"

@@ -13,7 +13,7 @@ export const CharactersCardList = ({ characters, navigation, charNumber }) => {
           return (
             <View style={styles.body}>
               <TouchableOpacity
-              key={index}
+                key={index}
                 onPress={() => {
                   navigation.navigate("SwInfoCharacter", {
                     characters: characters,
@@ -41,7 +41,7 @@ export const MoviesCardList = ({ movies, navigation }) => {
         movies.results.map((movies, index) => {
           return (
             <TouchableOpacity
-            key={index}
+              key={index}
               onPress={() => {
                 navigation.navigate("SwInfoMovie", {
                   movies: movies,
@@ -99,7 +99,7 @@ export const StarshipsCardList = ({
         starships.results.map((starships, index) => {
           return (
             <TouchableOpacity
-            key={index}
+              key={index}
               onPress={() => {
                 navigation.navigate("SwInfoStarship", {
                   starships: starships,

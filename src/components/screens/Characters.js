@@ -26,23 +26,23 @@ const Characters = ({ navigation, route }) => {
   }, []);
 
   return (
-  <SafeAreaView style={styles.container}>
-    <ImageBackground
-      source={require("../../../assets/image/darth.jpg")}
-      resizeMode="contain"
-      style={styles.bgImage}
-    />
-      
-        {characters.count ? (
-          <CharactersCardList
-            characters={characters}
-            navigation={navigation}
-            charNumber={charNumber}
-          />
-        ) : (
-          <ActivityIndicator animating={true} />
-        )}
-      </SafeAreaView>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground
+        source={require("../../../assets/image/darth.jpg")}
+        resizeMode="contain"
+        style={styles.bgImage}
+      />
+
+      {characters.count ? (
+        <CharactersCardList
+          characters={characters}
+          navigation={navigation}
+          charNumber={charNumber}
+        />
+      ) : (
+        <ActivityIndicator animating={true} />
+      )}
+    </SafeAreaView>
   );
 };
 
@@ -58,23 +58,6 @@ const styles = StyleSheet.create({
     marginTop: 250,
     marginLeft: 105,
     position: "relative",
-<<<<<<< HEAD
-  },
-  bgImage: {
-    flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center",
-    alignItems: "center",
-    width: width,
-    height: height,
-    position: "absolute",
-    backgroundColor: theme.colors.red,
-    marginTop: -10,
-  },
-  bg: {
-    backgroundColor: theme.colors.red,
-  },
-=======
   },
   bgImage: {
     flex: 1,
@@ -87,8 +70,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.darth,
     marginTop: -10,
   },
-  
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
 });
 
 export default Characters;

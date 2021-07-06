@@ -24,10 +24,7 @@ export const PagesCharacters = ({ navigation }) => {
           source={require("../../../assets/image/darth.jpg")}
           resizeMode="contain"
           style={styles.bgImage}
-<<<<<<< HEAD
-=======
           backgroundColor={theme.colors.darth}
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
         />
         <View style={styles.bodyC}>
           <Text style={styles.TextTitle}>Select a page to show Characters</Text>
@@ -149,16 +146,10 @@ export const PagesPlanets = ({ navigation }) => {
           source={require("../../../assets/image/leia.jpg")}
           resizeMode="contain"
           style={styles.bgImage}
-<<<<<<< HEAD
-        />
-        <View style={styles.bodyP}>
-          <Text style={styles.TextTitle}>Select a page to show Planets</Text>
-=======
           backgroundColor={theme.colors.orange}
         />
         <View style={styles.bodyP}>
-          <Text style={styles.TextTitleP} >Select a page to show Planets</Text>
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
+          <Text style={styles.TextTitleP}>Select a page to show Planets</Text>
           <TouchableOpacity
             style={styles.buttonP}
             onPress={() => {
@@ -241,16 +232,10 @@ export const PagesStarships = ({ navigation }) => {
           source={require("../../../assets/image/r2d2.jpg")}
           resizeMode="contain"
           style={styles.bgImage}
-<<<<<<< HEAD
-        />
-        <View style={styles.bodyS}>
-          <Text style={styles.TextTitle}>Select a page to show Starships</Text>
-=======
           backgroundColor={theme.colors.gray}
         />
         <View style={styles.bodyS}>
           <Text style={styles.TextTitleS}>Select a page to show Starships</Text>
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
           <TouchableOpacity
             style={styles.buttonS}
             onPress={() => {
@@ -324,11 +309,7 @@ const styles = StyleSheet.create({
     height: height,
   },
   bodyS: {
-<<<<<<< HEAD
-    marginTop: -200,
-=======
-    marginTop:-100,
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
+    marginTop: -100,
     justifyContent: "center",
     alignItems: "center",
     height: height,
@@ -340,11 +321,7 @@ const styles = StyleSheet.create({
   },
   TextP: {
     textAlign: "center",
-<<<<<<< HEAD
-    color: theme.colors.textLeia,
-=======
     color: theme.colors.lightYellow,
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     fontSize: 20,
   },
   TextS: {
@@ -355,9 +332,6 @@ const styles = StyleSheet.create({
   TextTitle: {
     textAlign: "center",
     color: theme.colors.bgColor,
-<<<<<<< HEAD
-    fontSize: 20,
-=======
     fontSize: 22,
     fontWeight: "bold",
     marginTop: 40,
@@ -373,7 +347,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: theme.colors.blue,
     fontSize: 22,
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     fontWeight: "bold",
     marginTop: 20,
   },
@@ -385,10 +358,6 @@ const styles = StyleSheet.create({
     width: width,
     height: height,
     position: "absolute",
-<<<<<<< HEAD
-=======
-   
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
   },
   buttonC: {
     width: 250,
@@ -403,28 +372,17 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.77,
     shadowRadius: 5,
-<<<<<<< HEAD
-    marginTop: 20,
-=======
     marginTop: 15,
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     justifyContent: "center",
     alignItems: "center",
   },
   buttonP: {
     width: 250,
     height: 80,
-<<<<<<< HEAD
-    backgroundColor: theme.colors.opacityblack,
-    borderRadius: 25,
-    borderWidth: 5,
-    borderColor: theme.colors.orange,
-=======
     backgroundColor: theme.colors.opacity,
     borderRadius: 25,
     borderWidth: 5,
     borderColor: theme.colors.lightYellow,
->>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     shadowOffset: {
       width: 3,
       height: 3,
