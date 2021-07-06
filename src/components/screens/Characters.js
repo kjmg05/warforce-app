@@ -1,15 +1,18 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, SafeAreaView, Text, TouchableOpacity, Modal} from "react-native";
+import { SafeAreaView, StyleSheet ,ImageBackground,Dimensions,ScrollView} from "react-native";
+import { ActivityIndicator } from "react-native-paper";
 import { fetchStarWars } from "../../api";
 import { CharactersCardList } from "../CardList";
-import { LinkedInfo } from "../../api";
+import theme from "../../theme";
 
-const Characters = ({navigation}) => {
-    //Characters
+
+const {width, height} = Dimensions.get("screen");
+const Characters = ({navigation, route}) => {
     const [characters, setCharacters] = useState({});
+    const {page, charNumber} = route.params;
 
     const getCharacters = async () => {
-        const response = await fetchStarWars('people/');
+        const response = await fetchStarWars(page);
         
         setCharacters(response);
     };
@@ -19,49 +22,54 @@ const Characters = ({navigation}) => {
     }, []);
 
     return (
-        <SafeAreaView style={styles.container}>
-          
-            <CharactersCardList characters = {characters} navigation={navigation}/>
-            <TouchableOpacity onPress={() => {}} style={styles.button1}> 
-                <Text style={styles.Text}>Next</Text>
-            </TouchableOpacity>
-           
-        </SafeAreaView>
-        
+       
+        <ImageBackground
+          source={require("../../../assets/image/darth.jpg")}
+          resizeMode="contain"
+          style={styles.bgImage}
+        >
+            <SafeAreaView style={styles.container}>
+               
+                {characters.count ? 
+                    (<CharactersCardList characters = {characters} navigation={navigation} charNumber = {charNumber}/>) 
+                    : (<ActivityIndicator animating={true}/>)}
+                
+            </SafeAreaView>   
+        </ImageBackground>
+   
     );  
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "rgba(15,15, 15,1)",
-  },
-  button1: {
-    
+    container: {
+        flex: 1,
+        width: width,
+        height: height,
+      },
+      wfImageModal: {
+        width: 200,
+        height: 130,
+        marginTop: 250,
+        marginLeft: 105,
+        position:"relative",
+      },
 
-    width: 150,
-     height: 50,
-     backgroundColor: "rgba(164,164,164,0.5)",
-     borderRadius: 25,
-     borderWidth: 5,
-     borderColor: "rgba(248,221,43,1)",
-     shadowColor: "rgba(218,224,12,1)",
-     shadowOffset: {
-         width: 3,
-         height: 3},        
-     elevation: 15,
-     shadowOpacity: 0.77,
-     shadowRadius: 5,
-     marginTop: 20,
-  justifyContent:"center",
-  alignContent:"center"
-     
-   },
-   Text: {
-    textAlign:"center",    
-    color: "rgba(248,221,43,1)",
-    fontSize: 38
-  },
+      bgImage: {
+        flex:1,
+        resizeMode: "cover",
+        justifyContent:"center",
+        alignItems:"center",
+        width: width,
+        height: height,
+        position:"absolute",
+        backgroundColor:theme.colors.red,
+      
+      },
+      bg: {
+        backgroundColor:theme.colors.red,
+
+      },
+
 
 });
 

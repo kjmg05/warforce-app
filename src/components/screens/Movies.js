@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, ScrollView } from "react-native";
-import { linkedInfo, fetchStarWars } from "../../api";
+import { SafeAreaView, StyleSheet ,ImageBackground,Dimensions } from "react-native";
+import { ActivityIndicator } from "react-native-paper";
+import { fetchStarWars } from "../../api";
 import { MoviesCardList } from "../CardList";
 
+
+const {width, height} = Dimensions.get("screen");
 const Movies = ({navigation}) => {
     const [movies, setMovies] = useState({});
 
@@ -17,17 +20,33 @@ const Movies = ({navigation}) => {
       }, []);
 
     return (
-        <ScrollView style={styles.container}>
-            <MoviesCardList movies = {movies} navigation={navigation}/>
-        </ScrollView>
+        <ImageBackground
+          source={require("../../../assets/image/luke.jpg")}
+          resizeMode="contain"
+          style={styles.bgImage}
+        >
+        <SafeAreaView style={styles.container}>
+            {movies.count ?
+            (<MoviesCardList movies = {movies} navigation={navigation}/>)
+            : (<ActivityIndicator animating={true}/>)}
+        </SafeAreaView>
+        </ImageBackground>
     );  
 };
 
 const styles = StyleSheet.create({
      container: {
     flex: 1,
-    backgroundColor: "rgba(15,15, 15,1)",
-  }
-  ,});
+  },
+  bgImage: {
+
+    resizeMode:"contain",
+    justifyContent:"center",
+    alignItems:"center",
+    width: width,
+    height: height,
+    position:"absolute",
+  },
+});
 
 export default Movies;
