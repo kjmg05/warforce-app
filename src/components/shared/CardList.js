@@ -6,12 +6,15 @@ import { CardPlanets } from "./Card";
 import { CardStarships } from "./Card";
 
 export const CharactersCardList = ({ characters, navigation, charNumber }) => {
+  
   return (
     <ScrollView>
       {characters.count &&
         characters.results.map((characters, index) => {
+
           return (
-            <View style={styles.body}>
+            <View style={styles.body}  key={index}>
+              
               <TouchableOpacity
               key={index}
                 onPress={() => {

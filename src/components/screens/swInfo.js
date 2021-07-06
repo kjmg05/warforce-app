@@ -37,6 +37,7 @@ export const SwInfoCharacter = ({ route }) => {
       >
         <View>
           <CardCharacters
+            key={index}
             swData1={`Name: ${characters.name}`}
             swData2={`Height: ${characters.height}`}
             swData3={`Mass: ${characters.mass}`}
@@ -82,12 +83,14 @@ export const SwInfoPlanet = ({ route }) => {
 
   return (
     <View style={styles.container} backgroundColor={theme.colors.orange}>
+       key={index}
       <ImageBackground
         source={require("../../../assets/image/leia.jpg")}
         resizeMode="contain"
         style={styles.bgImage}
       >
         <CardPlanets
+      
           swData1={`Planet: ${planets.name}`}
           swData2={`Rotation Period: ${planets.rotation_period}`}
           swData3={`Orbital Period: ${planets.orbital_period}`}
