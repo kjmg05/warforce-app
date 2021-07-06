@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     marginTop: 250,
     marginLeft: 105,
     position: "relative",
+<<<<<<< HEAD
   },
   bgImage: {
     flex: 1,
@@ -73,6 +74,21 @@ const styles = StyleSheet.create({
   bg: {
     backgroundColor: theme.colors.red,
   },
+=======
+  },
+  bgImage: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+    alignItems: "center",
+    width: width,
+    height: height,
+    position: "absolute",
+    backgroundColor: theme.colors.darth,
+    marginTop: -10,
+  },
+  
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
 });
 
 export default Characters;

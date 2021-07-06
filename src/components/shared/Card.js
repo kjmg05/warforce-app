@@ -136,7 +136,11 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.opacityblack,
     borderRadius: 25,
     borderWidth: 5,
+<<<<<<< HEAD
     borderColor: theme.colors.blue,
+=======
+    borderColor: theme.colors.r2d2,
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     shadowColor: theme.colors.lightBlue,
     shadowOffset: { width: 3, height: 3 },
     shadowOpacity: 0.77,
@@ -144,29 +148,46 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   textCharacters: {
+<<<<<<< HEAD
     fontSize: 20,
+=======
+    fontSize: 30,
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     fontWeight: "bold",
     textAlign: "center",
     color: theme.colors.red,
   },
   textMovies: {
+<<<<<<< HEAD
     fontSize: 13,
+=======
+    fontSize: 20,
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     fontWeight: "bold",
     textAlign: "center",
     color: theme.colors.lightBlue,
   },
   textPlanets: {
+<<<<<<< HEAD
     fontSize: 20,
+=======
+    fontSize: 30,
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     fontWeight: "bold",
     textAlign: "center",
     color: theme.colors.lightYellow,
   },
   textShip: {
+<<<<<<< HEAD
     fontSize: 15,
+=======
+    fontSize: 30,
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     fontWeight: "bold",
     textAlign: "center",
     color: theme.colors.blue,
   },
+<<<<<<< HEAD
   text: {
     fontSize: 20,
     fontWeight: "bold",
@@ -182,4 +203,7 @@ const styles = StyleSheet.create({
   resize: {
     resizeMode: "contain",
   },
+=======
+  
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
 });

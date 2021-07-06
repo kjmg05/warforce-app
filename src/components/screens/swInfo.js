@@ -11,6 +11,10 @@ import { CardPlanets } from "../shared/CardInfo";
 import { CardMovies } from "../shared/CardInfo";
 import { CardStarships } from "../shared/CardInfo";
 const { width, height } = Dimensions.get("screen");
+<<<<<<< HEAD
+=======
+import theme from "../../theme";
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
 
 export const SwInfoCharacter = ({ route }) => {
   const { characters, index } = route.params;
@@ -28,7 +32,11 @@ export const SwInfoCharacter = ({ route }) => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <View style={styles.container}>
+=======
+    <View style={styles.container}backgroundColor={theme.colors.darth}>
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
       <ImageBackground
         source={require("../../../assets/image/darth.jpg")}
         resizeMode="contain"
@@ -57,7 +65,11 @@ export const SwInfoMovie = ({ route }) => {
   const { movies, index } = route.params;
 
   return (
+<<<<<<< HEAD
     <View style={styles.container}>
+=======
+    <View style={styles.container } backgroundColor={theme.colors.blue} >
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
       <ImageBackground
         source={require("../../../assets/image/luke.jpg")}
         resizeMode="contain"
@@ -80,7 +92,11 @@ export const SwInfoPlanet = ({ route }) => {
   const { planets, index } = route.params;
 
   return (
+<<<<<<< HEAD
     <View style={styles.container}>
+=======
+    <View style={styles.container} backgroundColor={theme.colors.orange}>
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
       <ImageBackground
         source={require("../../../assets/image/leia.jpg")}
         resizeMode="contain"
@@ -129,6 +145,10 @@ const styles = StyleSheet.create({
     flex: 1,
     width: width,
     height: height,
+<<<<<<< HEAD
+=======
+   // backgroundColor:theme.colors.red,
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
   },
   bgColor: {
     flex: 1,

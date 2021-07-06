@@ -32,8 +32,13 @@ export default function App() {
           <Stack.Screen name = "SwInfoPlanet" component={SwInfoPlanet} options={{title: "Planet Information", headerStyle: {backgroundColor: theme.colors.white, }, headerTintColor: theme.colors.orange,headerTitleStyle: {fontWeight: 'bold',  },  }}/>
           <Stack.Screen name = "SwInfoMovie" component={SwInfoMovie} options={{title: "Movie Information",headerStyle: {backgroundColor:theme.colors.white, }, headerTintColor: theme.colors.blue ,headerTitleStyle: { fontWeight: 'bold',},}}/>
           <Stack.Screen name = "SwInfoStarship" component={SwInfoStarship} options={{title: "Starship Information", headerStyle: {backgroundColor: theme.colors.blue, }, headerTintColor: theme.colors.white,headerTitleStyle: {fontWeight: 'bold',  }, }}/>
+<<<<<<< HEAD
           <Stack.Screen name = "PagesCharacters" component={PagesCharacters} options={{title: 'Character Pages', headerStyle: {backgroundColor: theme.colors.bgColor, }, headerTintColor: theme.colors.red,headerTitleStyle: {fontWeight: 'bold',  },  }}/>
 
+=======
+          
+          <Stack.Screen name = "PagesCharacters" component={PagesCharacters} options={{title: 'Character Pages', headerStyle: {backgroundColor: theme.colors.bgColor, }, headerTintColor: theme.colors.red,headerTitleStyle: {fontWeight: 'bold',  },  }}/>
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
           <Stack.Screen name = "PagesPlanets" component={PagesPlanets} options={{title: "Planets", headerStyle: {backgroundColor: theme.colors.white, }, headerTintColor: theme.colors.orange,headerTitleStyle: {fontWeight: 'bold',  },  }}/>
           <Stack.Screen name = "PagesStarships" component={PagesStarships} options={{title: "Starships", headerStyle: {backgroundColor: theme.colors.blue, }, headerTintColor: theme.colors.white,headerTitleStyle: {fontWeight: 'bold',  },  }}/>
         </Stack.Navigator>

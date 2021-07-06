@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< HEAD
 import { StyleSheet, Text, View, Dimensions } from "react-native";
+=======
+import { StyleSheet, Text, View, Dimensions,ScrollView } from "react-native";
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
 import StarWarsImage from "./StarWarsImage";
 import theme from "../../theme";
 
@@ -45,6 +49,10 @@ export const CardMovies = ({
   number,
 }) => {
   return (
+<<<<<<< HEAD
+=======
+    <ScrollView>
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
     <View style={styles.CardMovies}>
       <Text style={styles.textMovies}>{swData1}</Text>
       <Text style={styles.textMovies}>{swData2}</Text>
@@ -52,7 +60,13 @@ export const CardMovies = ({
       <Text style={styles.textMovies}>{swData4}</Text>
       <StarWarsImage number={number} />
       <Text style={styles.textMovies}>{swData5}</Text>
+<<<<<<< HEAD
     </View>
+=======
+     
+    </View>
+    </ScrollView>
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
   );
 };
 
@@ -103,6 +117,10 @@ export const CardStarships = ({
 };
 
 const styles = StyleSheet.create({
+<<<<<<< HEAD
+=======
+
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
   CardCharacters: {
     marginTop: -100,
     padding: 10,
@@ -132,7 +150,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.77,
     shadowRadius: 5,
     marginTop: 25,
+<<<<<<< HEAD
     marginBottom: 130,
+=======
+    marginBottom: 160,
+>>>>>>> e439214d0eeeefb39e7afb9a6e0fcdcefa5aa906
   },
   CardPlanets: {
     margin: 10,
