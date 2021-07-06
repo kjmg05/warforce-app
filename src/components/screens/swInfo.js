@@ -83,7 +83,7 @@ export const SwInfoPlanet = ({ route }) => {
 
   return (
     <View style={styles.container} backgroundColor={theme.colors.orange}>
-       key={index}
+  
       <ImageBackground
         source={require("../../../assets/image/leia.jpg")}
         resizeMode="contain"
