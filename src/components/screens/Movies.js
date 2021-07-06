@@ -1,65 +1,58 @@
-import React, {useEffect, useState} from "react";
-<<<<<<< HEAD
-import { SafeAreaView, StyleSheet } from "react-native";
-=======
-import { SafeAreaView, StyleSheet ,ImageBackground,Dimensions } from "react-native";
->>>>>>> 89ec3165b7f2a864cc46bae2b9c53d0c9881af31
+import React, { useEffect, useState } from "react";
+import {
+  SafeAreaView,
+  StyleSheet,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 import { fetchStarWars } from "../../api";
-import { MoviesCardList } from "../CardList";
+import { MoviesCardList } from "../shared/CardList";
 
+const { width, height } = Dimensions.get("screen");
 
-const {width, height} = Dimensions.get("screen");
-const Movies = ({navigation}) => {
-    const [movies, setMovies] = useState({});
+const Movies = ({ navigation }) => {
+  const [movies, setMovies] = useState({});
 
-    const getMovies = async () => {
-        const response = await fetchStarWars('films/');
-        
-        setMovies(response);
-    };
+  const getMovies = async () => {
+    const response = await fetchStarWars("films/");
 
-    useEffect(() => {
-        getMovies();
-      }, []);
+    setMovies(response);
+  };
 
-    return (
-<<<<<<< HEAD
-=======
-        <ImageBackground
-          source={require("../../../assets/image/luke.jpg")}
-          resizeMode="contain"
-          style={styles.bgImage}
-        >
->>>>>>> 89ec3165b7f2a864cc46bae2b9c53d0c9881af31
-        <SafeAreaView style={styles.container}>
-            {movies.count ?
-            (<MoviesCardList movies = {movies} navigation={navigation}/>)
-            : (<ActivityIndicator animating={true}/>)}
-        </SafeAreaView>
-<<<<<<< HEAD
-=======
-        </ImageBackground>
->>>>>>> 89ec3165b7f2a864cc46bae2b9c53d0c9881af31
-    );  
+  useEffect(() => {
+    getMovies();
+  }, []);
+
+  return (
+  <SafeAreaView style={styles.container}>
+    <ImageBackground
+      source={require("../../../assets/image/luke.jpg")}
+      resizeMode="contain"
+      style={styles.bgImage}
+    />
+      
+        {movies.count ? (
+          <MoviesCardList movies={movies} navigation={navigation} />
+        ) : (
+          <ActivityIndicator animating={true} />
+        )}
+      </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
-     container: {
+  container: {
     flex: 1,
-<<<<<<< HEAD
-    backgroundColor: "#0F0F0F",
-=======
   },
   bgImage: {
-
-    resizeMode:"contain",
-    justifyContent:"center",
-    alignItems:"center",
+    resizeMode: "contain",
+    justifyContent: "center",
+    alignItems: "center",
     width: width,
     height: height,
-    position:"absolute",
->>>>>>> 89ec3165b7f2a864cc46bae2b9c53d0c9881af31
+    position: "absolute",
+    marginTop: -10,
   },
 });
 

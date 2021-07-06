@@ -4,11 +4,11 @@
     "slug": "WarForce",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/image/wficon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/image/wf_logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

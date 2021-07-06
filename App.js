@@ -13,33 +13,12 @@ import { SwInfoPlanet } from './src/components/screens/swInfo';
 import { SwInfoMovie } from './src/components/screens/swInfo';
 import { SwInfoStarship } from './src/components/screens/swInfo';
 import { PagesCharacters, PagesPlanets, PagesStarships } from './src/components/screens/Pages';
-<<<<<<< HEAD
-
-=======
 import theme from "./src/theme";
->>>>>>> 89ec3165b7f2a864cc46bae2b9c53d0c9881af31
 const Stack = createStackNavigator ();
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-<<<<<<< HEAD
-      <StatusBar></StatusBar>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name = "Home" component={Home} options={{headerShown: false}}/>
-          <Stack.Screen name = "Characters" component={Characters}/>
-          <Stack.Screen name = "Movies" component={Movies}/>
-          <Stack.Screen name = "Planets" component={Planets}/>
-          <Stack.Screen name = "Starships" component={Starships}/>
-          <Stack.Screen name = "SwInfoCharacter" component={SwInfoCharacter} options={{title: "Character Information"}} />
-          <Stack.Screen name = "SwInfoPlanet" component={SwInfoPlanet} options={{title: "Planet Information"}}/>
-          <Stack.Screen name = "SwInfoMovie" component={SwInfoMovie} options={{title: "Movie Information"}} />
-          <Stack.Screen name = "SwInfoStarship" component={SwInfoStarship} options={{title: "Starship Information"}}/>
-          <Stack.Screen name = "PagesCharacters" component={PagesCharacters} options={{title: "Characters"}}/>
-          <Stack.Screen name = "PagesPlanets" component={PagesPlanets} options={{title: "Planets"}}/>
-          <Stack.Screen name = "PagesStarships" component={PagesStarships} options={{title: "Starships"}}/>
-=======
       <StatusBar style={styles.nav}></StatusBar>
       <NavigationContainer>
         <Stack.Navigator>
@@ -57,7 +36,6 @@ export default function App() {
 
           <Stack.Screen name = "PagesPlanets" component={PagesPlanets} options={{title: "Planets", headerStyle: {backgroundColor: theme.colors.white, }, headerTintColor: theme.colors.orange,headerTitleStyle: {fontWeight: 'bold',  },  }}/>
           <Stack.Screen name = "PagesStarships" component={PagesStarships} options={{title: "Starships", headerStyle: {backgroundColor: theme.colors.blue, }, headerTintColor: theme.colors.white,headerTitleStyle: {fontWeight: 'bold',  },  }}/>
->>>>>>> 89ec3165b7f2a864cc46bae2b9c53d0c9881af31
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
