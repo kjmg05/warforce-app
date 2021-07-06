@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         height: height,
         position:"absolute",
         backgroundColor:theme.colors.red,
-      
+        marginTop:-10,
       },
       bg: {
         backgroundColor:theme.colors.red,

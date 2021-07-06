@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colors.bgColor,
-   
     //marginTop: Platform.OS === "ios" ? 0 : Constants.statusBarHeight,
   },
 
@@ -113,6 +112,9 @@ const styles = StyleSheet.create({
   modal: {
     flex: 1,
     backgroundColor: theme.colors.bgColor,
+    width: width,
+    height: height,
+
   },
 
   modalTitle: {

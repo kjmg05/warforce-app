@@ -5,7 +5,7 @@ import getEnvVars from "../../environment";
 const {width, height} = Dimensions.get("screen");
 const { imageUrl } = getEnvVars();
 
-const PokemonImage = ({ number }) => {
+const StarWarsImage = ({ number }) => {
   return (
     <View>
       <Image
@@ -20,21 +20,18 @@ const PokemonImage = ({ number }) => {
 
 const styles = StyleSheet.create({
    image: {
-       //width: width * 0.3,
-//     height: width * 0.8,
-
-
-      //height: width * 0.3,
+   
+  
       resizeMode: "contain",
       width:300,
       height: 300,
-      flex: 1,
-      position: "relative",
-      alignSelf: "center",
+      borderRadius:5,
+      marginTop:5,
+      marginBottom:10,
 
 
   },
 
 });
 
-export default PokemonImage;
+export default StarWarsImage;

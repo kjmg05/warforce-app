@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity, Text,ImageBackground,Dimensions} from "react-native";
-
+import { StyleSheet, View, TouchableOpacity, Text,ImageBackground,Dimensions,ScrollView} from "react-native";
+import theme from "../../theme";
 //#region Characters Pages
 
 const {width, height} = Dimensions.get("screen");
@@ -13,37 +13,38 @@ export const PagesCharacters = ({ navigation }) => {
           source={require("../../../assets/image/darth.jpg")}
           resizeMode="contain"
           style={styles.bgImage}
-        >
+        ><ScrollView>
         <View style={styles.container}>
-            <Text>Select a page to show Characters</Text>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: page, charNumber: 0})}}>
+            <Text style={styles.TextTitle} >Select a page to show Characters</Text>
+            <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Characters", {page: page, charNumber: 0})}}>
                 <Text style={styles.Text}>Characters Page One </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=2`, charNumber: 10})}}>
+            <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Characters", {page: `${page}?page=2`, charNumber: 10})}}>
                 <Text style={styles.Text}>Characters Page Two</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=3`, charNumber: charNumber+20})}}>
+            <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Characters", {page: `${page}?page=3`, charNumber: charNumber+20})}}>
                 <Text style={styles.Text}>Characters Page Three</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=4`, charNumber: charNumber+30})}}>
+            <TouchableOpacity  style={styles.button}onPress={() => {navigation.navigate("Characters", {page: `${page}?page=4`, charNumber: charNumber+30})}}>
                 <Text style={styles.Text}>Characters Page Four</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=5`, charNumber: charNumber+40})}}>
+            <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Characters", {page: `${page}?page=5`, charNumber: charNumber+40})}}>
                 <Text style={styles.Text}>Characters Page Five</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=6`, charNumber: charNumber+50})}}>
+            <TouchableOpacity style={styles.button}onPress={() => {navigation.navigate("Characters", {page: `${page}?page=6`, charNumber: charNumber+50})}}>
                 <Text style={styles.Text}>Characters Page Six</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=7`, charNumber: charNumber+60})}}>
+            <TouchableOpacity style={styles.button}onPress={() => {navigation.navigate("Characters", {page: `${page}?page=7`, charNumber: charNumber+60})}}>
                 <Text style={styles.Text}>Characters Page Seven</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=8`, charNumber: charNumber+70})}}>
+            <TouchableOpacity style={styles.button}onPress={() => {navigation.navigate("Characters", {page: `${page}?page=8`, charNumber: charNumber+70})}}>
                 <Text style={styles.Text}>Characters Page Eight</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {navigation.navigate("Characters", {page: `${page}?page=9`, charNumber: charNumber+80})}}>
+            <TouchableOpacity style={styles.button}onPress={() => {navigation.navigate("Characters", {page: `${page}?page=9`, charNumber: charNumber+80})}}>
                 <Text style={styles.Text}>Characters Page Nine</Text>
             </TouchableOpacity>
         </View>
+        </ScrollView>
         </ImageBackground>
     );
 };
@@ -57,7 +58,7 @@ export const PagesPlanets = ({ navigation }) => {
     return(
         <View style={styles.container}>
             <Text>Select a page to show Planets</Text>
-            <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: page, planetNumber: 0})}}>
+            <TouchableOpacity  style={styles.button} onPress={() => {navigation.navigate("Planets", {page: page, planetNumber: 0})}}>
                 <Text style={styles.Text}>Planets Page One </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {navigation.navigate("Planets", {page: `${page}?page=2`, planetNumber: planetNumber+10})}}>
@@ -108,12 +109,23 @@ export const PagesStarships = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent:"center",
+        alignItems:"center",
+   
         
     },
     Text: {
         textAlign:"center",    
-        color: "rgba(248,221,43,1)",
-        fontSize: 38
+        color: theme.colors.red,
+        fontSize: 20
+        
+    },
+    TextTitle: {
+        textAlign:"center",    
+        color: theme.colors.bgColor,
+        fontSize: 20,
+        fontWeight:"bold",    
+        marginTop:20
     },
     bgImage: {
         flex:1,
@@ -123,5 +135,25 @@ const styles = StyleSheet.create({
         width: width,
         height: height,
         position:"absolute",
+        marginTop:-12,
       },
-});
+      button: {
+        width: 250,
+        height: 80,
+        backgroundColor: theme.colors.opacityblack,
+        borderRadius: 25,
+        borderWidth: 5,
+        borderColor: theme.colors.red,
+        shadowColor: theme.colors.shadow,
+        shadowOffset: {
+            width: 3,
+            height: 3},        
+
+        shadowOpacity: 0.77,
+        shadowRadius: 5,
+        marginTop: 20,
+        justifyContent:"center",
+        alignItems:"center",
+      },
+    });
+          

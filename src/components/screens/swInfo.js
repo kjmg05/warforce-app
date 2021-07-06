@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
-import { StyleSheet, View,ImageBackground,Dimensions} from "react-native";
+import { StyleSheet, View,ImageBackground,Dimensions,ScrollView} from "react-native";
 import { LinkedInfo } from "../../api";
-import { CardCharacters } from "../Card";
-import { CardPlanets } from "../Card";
-import { CardMovies } from "../Card";
-import { CardStarships } from "../Card";
+import { CardCharacters } from "../CardInfo";
+import { CardPlanets } from "../CardInfo";
+import { CardMovies } from "../CardInfo";
+import { CardStarships } from "../CardInfo";
+import {CharacterInfo}from "../screens/CharacterInfo"
 
 const {width, height} = Dimensions.get("screen");
 
@@ -31,6 +32,7 @@ export const SwInfoCharacter = ({ route }) => {
     resizeMode="contain"
     style={styles.bgImage}
     >
+      <View   >
     <CardCharacters
       swData1 = {`Name: ${characters.name}`}  
       swData2 = {`Height: ${characters.height}`} 
@@ -42,7 +44,11 @@ export const SwInfoCharacter = ({ route }) => {
       swData8 = {`Gender: ${characters.gender}`} 
       swData9 = {`HomeWorld: ${info.name}`}
       number = {`characters/${index}`}
+      
     />
+     
+     
+    </View>
     </ImageBackground>
     </View>
   );
@@ -121,10 +127,18 @@ const {starships, index} = route.params;
 };
 
 const styles = StyleSheet.create({
+  
   container: {
     flex: 1,
-    backgroundColor: "rgba(15,15, 15,1)",
+    width:width,
+    height:height
   },
+  bgColor: {
+    flex: 1,
+    width:width,
+    height:height
+  },
+
   bgImage: {
     flex:1,
 resizeMode: "cover",
@@ -132,6 +146,8 @@ justifyContent:"center",
 alignItems:"center",
 width: width,
 height: height,
+marginTop:-15,
 position:"absolute",
+
   },
 });

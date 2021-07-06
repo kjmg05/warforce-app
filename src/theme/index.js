@@ -15,7 +15,7 @@ const theme = {
       gray: "#C4C4C4",
       bgColor: "#0F0F01",
       opacity: "rgba(164,164,164,0.5)",
-      opacityblack: "rgba(15,15, 15,0.5)",
+      opacityblack: "rgba(15,15, 15,0.60)",
       shadow: "#DAE00C",
     },
   };
