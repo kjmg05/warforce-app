@@ -1,52 +1,59 @@
-import React, {useEffect, useState} from "react";
-import { SafeAreaView, StyleSheet ,ImageBackground,Dimensions } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+  SafeAreaView,
+  StyleSheet,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 import { fetchStarWars } from "../../api";
-import { MoviesCardList } from "../CardList";
+import { MoviesCardList } from "../shared/CardList";
+import theme from "../../theme";
+const { width, height } = Dimensions.get("screen");
 
+const Movies = ({ navigation }) => {
+  const [movies, setMovies] = useState({});
 
-const {width, height} = Dimensions.get("screen");
-const Movies = ({navigation}) => {
-    const [movies, setMovies] = useState({});
+  const getMovies = async () => {
+    const response = await fetchStarWars("films/");
 
-    const getMovies = async () => {
-        const response = await fetchStarWars('films/');
-        
-        setMovies(response);
-    };
+    setMovies(response);
+  };
 
-    useEffect(() => {
-        getMovies();
-      }, []);
+  useEffect(() => {
+    getMovies();
+  }, []);
 
-    return (
-        <ImageBackground
-          source={require("../../../assets/image/luke.jpg")}
-          resizeMode="contain"
-          style={styles.bgImage}
-        >
-        <SafeAreaView style={styles.container}>
-            {movies.count ?
-            (<MoviesCardList movies = {movies} navigation={navigation}/>)
-            : (<ActivityIndicator animating={true}/>)}
-        </SafeAreaView>
-        </ImageBackground>
-    );  
+  return (
+  <SafeAreaView style={styles.container}>
+    <ImageBackground
+      source={require("../../../assets/image/luke.jpg")}
+      resizeMode="contain"
+      style={styles.bgImage}
+    />
+      
+        {movies.count ? (
+          <MoviesCardList movies={movies} navigation={navigation} />
+        ) : (
+          <ActivityIndicator animating={true} />
+        )}
+      </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
-     container: {
+  container: {
     flex: 1,
+    backgroundColor:theme.colors.blue
   },
   bgImage: {
-
-    resizeMode:"contain",
-    justifyContent:"center",
-    alignItems:"center",
+    resizeMode: "contain",
+    justifyContent: "center",
+    alignItems: "center",
     width: width,
     height: height,
-    position:"absolute",
-    marginTop:-10,
+    position: "absolute",
+    marginTop: -10,
   },
 });
 

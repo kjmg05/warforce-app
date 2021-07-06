@@ -1,57 +1,65 @@
-import React, {useEffect, useState} from "react";
-import { SafeAreaView, StyleSheet,ImageBackground,Dimensions } from "react-native";
+import React, { useEffect, useState } from "react";
+import {
+  SafeAreaView,
+  StyleSheet,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 import { fetchStarWars } from "../../api";
-import { StarshipsCardList } from "../CardList";
+import { StarshipsCardList } from "../shared/CardList";
 
+const { width, height } = Dimensions.get("screen");
 
- 
-const {width, height} = Dimensions.get("screen");
+const Starships = ({ navigation, route }) => {
+  const [starships, setStarships] = useState({});
+  const { page, starshipNumber } = route.params;
 
-const Starships = ({navigation, route}) => {
-    const [starships, setStarships] = useState({});
-    const {page, starshipNumber} = route.params;
-   
+  const getStarships = async () => {
+    const response = await fetchStarWars(page);
 
-    const getStarships = async () => {
-        const response = await fetchStarWars(page);
-        
-        setStarships(response);
-    };
+    setStarships(response);
+  };
 
-    useEffect(() => {
-        getStarships();
-      }, []);
+  useEffect(() => {
+    getStarships();
+  }, []);
 
-    return (
-        <ImageBackground
+  return (
+    <SafeAreaView style={styles.container}>
+      <ImageBackground
         source={require("../../../assets/image/r2d2.jpg")}
         resizeMode="contain"
-        style={styles.bgImage}>
-        <SafeAreaView  style={styles.container}>
-            {starships.count ? 
-            (<StarshipsCardList starships = {starships} navigation={navigation} starshipNumber={starshipNumber} />)
-            : (<ActivityIndicator animating={true}/>)}
-        </SafeAreaView>
-        </ImageBackground>
-    );  
+        style={styles.bgImage}
+      />
+
+      {starships.count ? (
+        <StarshipsCardList
+          starships={starships}
+          navigation={navigation}
+          starshipNumber={starshipNumber}
+        />
+      ) : (
+        <ActivityIndicator animating={true} />
+      )}
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-       
-      },
-      bgImage: {
-        flex:1,
-        resizeMode: "cover",
-        justifyContent:"center",
-        alignItems:"center",
-        width: width,
-        height: height,
-        position:"absolute",
-        marginTop:-20,
-      },
+  container: {
+    flex: 1,
+  },
+  bgImage: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+    alignItems: "center",
+    width: width,
+    height: height,
+    position: "absolute",
+    marginTop: -20,
+  },
 });
 
 export default Starships;

@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.77,
         shadowRadius: 5,
         marginTop: 20,
+        backgroundColor:theme.colors.bgColor
       },
     
       CardPlanets:{

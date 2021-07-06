@@ -31,16 +31,16 @@ export const CardCharacters = ({swData1, swData2, swData3, swData4, swData5, swD
 export const CardMovies = ({swData1, swData2, swData3, swData4, swData5, number}) => {
   return (
     <ScrollView>
-    <View style={styles.container}> 
+
       <View style={styles.CardMovies}>
         <Text style={styles.textMovies}>{swData1}</Text>
         <Text style={styles.textMovies}>{swData2}</Text>
         <Text style={styles.textMovies}>{swData3}</Text>
         <Text style={styles.textMovies}>{swData4}</Text>
         <StarWarsImage number = {number}/>
-        <Text style={styles.textMovies}>{swData5}</Text>
+        <Text style={styles}>{swData5}</Text>
     </View>
-    </View>
+
      </ScrollView>
   );
 };
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.77,
         shadowRadius: 5,
         marginTop: 25,
-        marginBottom: 130,
+        marginBottom: 60,
       },
     
       CardPlanets:{
@@ -187,23 +187,7 @@ const styles = StyleSheet.create({
       color:  theme.colors.blue,
     },
 
-    text: {
-      fontSize:20,
-      fontWeight:"bold",    
-      textAlign:"center",    
-      color: "#ff1500",
-    },
-    
-    image:{
-     
-      minHeight:"100%",
-      minWidth:"100%",
-      width:300,
-      height: 300,
-    },
-    resize:{
-      resizeMode:"contain",
-     
-    },
+   
+  
   
 });
