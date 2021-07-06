@@ -41,7 +41,6 @@ export const MoviesCardList = ({ movies, navigation }) => {
         movies.results.map((movies, index) => {
           return (
             <TouchableOpacity
-              key={index}
               onPress={() => {
                 navigation.navigate("SwInfoMovie", {
                   movies: movies,
@@ -68,7 +67,7 @@ export const PlanetsCardList = ({ planets, navigation, planetNumber }) => {
         planets.results.map((planets, index) => {
           return (
             <TouchableOpacity
-              key={index}
+              // key={index}
               onPress={() => {
                 navigation.navigate("SwInfoPlanet", {
                   planets: planets,
@@ -99,7 +98,7 @@ export const StarshipsCardList = ({
         starships.results.map((starships, index) => {
           return (
             <TouchableOpacity
-              key={index}
+              // key={index}
               onPress={() => {
                 navigation.navigate("SwInfoStarship", {
                   starships: starships,

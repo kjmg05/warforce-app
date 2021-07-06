@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, Text, View, Dimensions } from "react-native";
 import StarWarsImage from "./StarWarsImage";
 import theme from "../../theme";
 
@@ -27,7 +22,6 @@ export const CardMovies = ({ swData1, number }) => {
     <View style={styles.container}>
       <View style={styles.CardMovies}>
         <Text style={styles.textMovies}>{swData1}</Text>
-
         <StarWarsImage number={number} />
       </View>
     </View>
@@ -38,7 +32,6 @@ export const CardPlanets = ({ swData1, number }) => {
   return (
     <View style={styles.CardPlanets}>
       <Text style={styles.textPlanets}>{swData1}</Text>
-
       <StarWarsImage number={number} />
     </View>
   );
@@ -48,7 +41,6 @@ export const CardStarships = ({ swData1, number }) => {
   return (
     <View style={styles.CardStarships}>
       <Text style={styles.textShip}>{swData1}</Text>
-
       <StarWarsImage number={number} />
     </View>
   );
